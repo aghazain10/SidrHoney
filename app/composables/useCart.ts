@@ -1,24 +1,51 @@
-export const useCart = () => {
-    const cart = useState("cart", () => [] as any[]);
+// app/composables/useCart.ts
+import { ref, computed, onMounted } from "vue";
 
-    const addItem = (item: any) => {
-        cart.value.push({
-            ...item,
-            id: Date.now(), // simple unique id
-            quantity: 1,
-        });
-        // Optional: Show toast
-        console.log("Added to cart:", item);
-    };
+// ✅ Singleton state lives outside the function
+const cartItems = ref<any[]>([]);
 
-    const removeItem = (id: number) => {
-        cart.value = cart.value.filter((item) => item.id !== id);
-    };
+function addToCart(product: any, quantity: number) {
+    const existing = cartItems.value.find((item) => item.id === product.id);
+    if (existing) {
+        existing.quantity += quantity;
+    } else {
+        cartItems.value.push({ ...product, quantity });
+    }
+    saveCart();
+}
 
-    return {
-        cart: readonly(cart),
-        addItem,
-        removeItem,
-        itemCount: computed(() => cart.value.length),
-    };
-};
+function removeFromCart(productId: string) {
+    cartItems.value = cartItems.value.filter((item) => item.id !== productId);
+    saveCart();
+}
+
+function clearCart() {
+    cartItems.value = [];
+    saveCart();
+}
+
+const total = computed(() =>
+    cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0),
+);
+
+function saveCart() {
+    if (typeof window !== "undefined") {
+        localStorage.setItem("cart", JSON.stringify(cartItems.value));
+    }
+}
+
+function loadCart() {
+    if (typeof window !== "undefined") {
+        const saved = localStorage.getItem("cart");
+        if (saved) cartItems.value = JSON.parse(saved);
+    }
+}
+
+onMounted(() => {
+    loadCart();
+});
+
+// ✅ Always return the same refs
+export function useCart() {
+    return { cartItems, addToCart, removeFromCart, clearCart, total };
+}

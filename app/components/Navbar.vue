@@ -23,42 +23,63 @@
                 <li><a href="#faq" class="hover:text-amber-600">FAQs</a></li>
             </ul>
 
-            <!-- Mobile Hamburger -->
-            <button
-                @click="showMenu = true"
-                class="md:hidden text-gray-700 focus:outline-none"
-            >
-                <!-- Three lines icon -->
-                <svg
-                    class="w-8 h-8"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
+            <!-- Right Side: Cart + Hamburger -->
+            <div class="flex items-center space-x-4">
+                <!-- Cart Icon -->
+                <div class="relative cursor-pointer" @click="openCart">
+                    <svg
+                        class="w-7 h-7 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                    <span
+                        v-if="cart.itemCount()"
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2"
+                    >
+                        {{ cart.itemCount() }}
+                    </span>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button
+                    @click="showMenu = true"
+                    class="md:hidden text-gray-700 focus:outline-none"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M4 6h16M4 12h16M4 18h16"
-                    />
-                </svg>
-            </button>
+                    <svg
+                        class="w-8 h-8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Drawer -->
         <div v-if="showMenu" class="fixed inset-0 z-50 flex">
-            <!-- Overlay (20%) -->
             <div
                 class="w-1/5 bg-black bg-opacity-50"
                 @click="showMenu = false"
             ></div>
-
-            <!-- Drawer (80%) -->
             <div class="w-4/5 bg-white shadow-lg p-6 relative">
-                <!-- Close Arrow -->
                 <button
                     @click="showMenu = false"
-                    class="absolute top-4 right-4 text-gray-700"
+                    class="absolute top-4 right-4 text-gray-700 hover:text-amber-600"
                 >
                     <svg
                         class="w-6 h-6"
@@ -75,7 +96,6 @@
                     </svg>
                 </button>
 
-                <!-- Vertical Menu -->
                 <ul class="space-y-6 text-gray-700 font-medium mt-10">
                     <li>
                         <a
@@ -120,10 +140,26 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Cart Drawer component (mounted here) -->
+        <CartDrawer ref="cartDrawer" />
     </nav>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useCartStore } from "~/stores/cart";
+import CartDrawer from "~/components/CartDrawer.vue";
+
 const showMenu = ref(false);
+const cart = useCartStore();
+
+const cartDrawer = ref(null);
+
+function openCart() {
+    // open the drawer exposed method
+    if (cartDrawer.value && typeof cartDrawer.value.openCart === "function") {
+        cartDrawer.value.openCart();
+    }
+}
 </script>

@@ -19,7 +19,7 @@
                 Sidr trees.
             </p>
 
-            <!-- Quantity Selector (Inline Buttons) -->
+            <!-- Quantity Selector -->
             <div class="mt-6">
                 <p class="text-gray-700 font-medium mb-2">Select Quantity</p>
                 <div class="flex gap-4">
@@ -41,11 +41,12 @@
 
             <!-- Price -->
             <p class="mt-4 text-lg font-semibold text-gray-900">
-                Price: Rs. {{ price }}
+                Price: Rs. {{ displayPrice }}
             </p>
 
             <!-- Add to Cart -->
             <button
+                @click="handleAddToCart"
                 class="mt-6 bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
             >
                 Add to Cart
@@ -75,7 +76,7 @@
                     >
                     <input
                         type="number"
-                        v-model="customOrder.quantity"
+                        v-model.number="customOrder.quantity"
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                         required
                     />
@@ -109,21 +110,24 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useCartStore } from "~/stores/cart";
 
-const selectedQuantity = ref(1000);
+const cart = useCartStore();
+
+const selectedQuantity = ref(1);
 const showModal = ref(false);
 
 const quantities = [
-    { label: "1kg", value: 1000 },
-    { label: "5kg", value: 5000 },
-    { label: "10kg", value: 10000 },
+    { label: "1kg", value: 1 },
+    { label: "5kg", value: 5 },
+    { label: "10kg", value: 10 },
     { label: "Custom Order", value: "custom" },
 ];
 
-const price = computed(() => {
-    if (selectedQuantity.value === 1000) return 4800;
-    if (selectedQuantity.value === 5000) return 22000;
-    if (selectedQuantity.value === 10000) return 42000;
+const displayPrice = computed(() => {
+    if (selectedQuantity.value === 1) return 4800;
+    if (selectedQuantity.value === 5) return 22000;
+    if (selectedQuantity.value === 10) return 42000;
     return "—";
 });
 
@@ -135,11 +139,17 @@ function selectQuantity(value) {
     }
 }
 
-const customOrder = ref({
-    name: "",
-    quantity: "",
-    message: "",
-});
+function handleAddToCart() {
+    // Each package is treated as one cart item; quantity here is number of packages
+    const product = {
+        id: `sidr-honey-${selectedQuantity.value}kg`,
+        name: `Sidr Honey ${selectedQuantity.value}kg`,
+        price: displayPrice.value,
+    };
+    cart.addToCart(product, 1);
+}
+
+const customOrder = ref({ name: "", quantity: "", message: "" });
 
 function submitCustomOrder() {
     alert(

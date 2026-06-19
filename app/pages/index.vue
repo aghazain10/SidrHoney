@@ -18,6 +18,9 @@
         <!-- Social Proof -->
         <SocialProof />
 
+        <!-- Certificates -->
+        <Certificates />
+
         <!-- About Honey -->
         <AboutHoney />
 
@@ -42,6 +45,7 @@ import FeaturedProduct from "~/components/FeaturedProduct.vue";
 import HealthBenefits from "~/components/HealthBenefits.vue";
 import WhyChooseUs from "~/components/WhyChooseUs.vue";
 import SocialProof from "~/components/SocialProof.vue";
+import Certificates from "~/components/Certificates.vue";
 import AboutHoney from "~/components/AboutHoney.vue";
 import FAQ from "~/components/FAQ.vue";
 import StickyPurchaseBar from "~/components/StickyPurchaseBar.vue";
