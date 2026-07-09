@@ -7,65 +7,63 @@
             Tips, recipes, and stories about honey
         </p>
 
+        <!-- Loading state -->
+        <div v-if="pending" class="mt-10 text-center text-gray-500">
+            Loading posts...
+        </div>
+
+        <!-- Error state -->
+        <div v-else-if="error" class="mt-10 text-center text-red-500">
+            Couldn't load blog posts right now.
+        </div>
+
+        <!-- Empty state -->
+        <div v-else-if="!posts.length" class="mt-10 text-center text-gray-500">
+            No blog posts yet. Check back soon!
+        </div>
+
+        <!-- Posts -->
         <div
+            v-else
             class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6"
         >
-            <!-- Blog Post 1 -->
-            <div class="bg-gray-50 rounded-lg shadow p-6">
+            <div
+                v-for="post in posts"
+                :key="post.id"
+                class="bg-gray-50 rounded-lg shadow p-6"
+            >
                 <img
-                    src="/blog.jpg"
-                    alt="Blog Image"
+                    :src="post.image_url || '/blog.jpg'"
+                    :alt="post.title"
                     class="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <h3 class="font-semibold text-lg text-gray-900">
-                    5 Health Benefits of Sidr Honey
+                    {{ post.title }}
                 </h3>
                 <p class="text-gray-600 text-sm mt-2">
-                    Discover how Sidr honey boosts immunity, aids digestion, and
-                    provides natural energy.
+                    {{ post.excerpt }}
                 </p>
-                <button class="mt-4 text-amber-600 font-medium hover:underline">
+                <NuxtLink
+                    :to="`/blog/${post.slug}`"
+                    class="mt-4 inline-block text-amber-600 font-medium hover:underline"
+                >
                     Read More
-                </button>
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="bg-gray-50 rounded-lg shadow p-6">
-                <img
-                    src="/blog.jpg"
-                    alt="Blog Image"
-                    class="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <h3 class="font-semibold text-lg text-gray-900">
-                    Honey Lemon Detox Drink
-                </h3>
-                <p class="text-gray-600 text-sm mt-2">
-                    A simple recipe to cleanse your body and refresh your
-                    mornings.
-                </p>
-                <button class="mt-4 text-amber-600 font-medium hover:underline">
-                    Read More
-                </button>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="bg-gray-50 rounded-lg shadow p-6">
-                <img
-                    src="/blog.jpg"
-                    alt="Blog Image"
-                    class="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <h3 class="font-semibold text-lg text-gray-900">
-                    The Journey of Sidr Honey
-                </h3>
-                <p class="text-gray-600 text-sm mt-2">
-                    From the Sidr trees of Gilgit-Baltistan to your table — our
-                    story.
-                </p>
-                <button class="mt-4 text-amber-600 font-medium hover:underline">
-                    Read More
-                </button>
+                </NuxtLink>
             </div>
         </div>
     </section>
 </template>
+
+<script setup>
+const config = useRuntimeConfig();
+
+const { data, pending, error } = await useFetch(
+    `${config.public.apiBase}/api/blogs`,
+    {
+        query: { limit: 3 },
+    },
+);
+
+// Laravel's paginate() wraps results in a `data` key inside `data.data`
+const posts = computed(() => data.value?.data?.data ?? []);
+</script>

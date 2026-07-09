@@ -7,4 +7,9 @@ export default defineNuxtConfig({
     tailwindcss: {
         exposeConfig: true,
     },
+    runtimeConfig: {
+        public: {
+            apiBase: "http://localhost:8000",
+        },
+    },
 });

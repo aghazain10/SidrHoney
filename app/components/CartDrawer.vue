@@ -1,88 +1,75 @@
 <template>
-    <div v-if="showCart" class="fixed inset-0 z-50 flex">
+    <div v-if="showCart" class="fixed inset-0 z-[100] flex">
         <!-- Overlay -->
-        <div class="w-1/5 bg-black bg-opacity-50" @click="closeCart"></div>
+        <div class="flex-1 bg-black bg-opacity-60" @click="closeCart"></div>
 
         <!-- Drawer -->
-        <div class="w-4/5 bg-white shadow-lg p-6 relative flex flex-col">
-            <button
-                @click="closeCart"
-                class="absolute top-4 right-4 text-gray-700 hover:text-amber-600"
-            >
-                <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
+        <div class="w-full max-w-md bg-white shadow-2xl flex flex-col h-full">
+            <!-- Header -->
+            <div class="p-6 border-b flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-gray-900">Your Cart</h2>
+                <button
+                    @click="closeCart"
+                    class="text-gray-600 hover:text-red-500"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                    />
-                </svg>
-            </button>
-
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Cart</h2>
+                    ✕
+                </button>
+            </div>
 
             <!-- Cart Items -->
-            <div
-                v-if="cart.cartItems.length"
-                class="flex-1 overflow-y-auto space-y-4"
-            >
-                <div
-                    v-for="item in cart.cartItems"
-                    :key="item.id"
-                    class="flex justify-between items-center border-b pb-2"
-                >
-                    <div>
-                        <h3 class="font-semibold text-gray-800">
-                            {{ item.name }}
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Qty: {{ item.quantity }}
-                        </p>
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                <div v-if="cart.cartItems.length" class="space-y-6">
+                    <div
+                        v-for="item in cart.cartItems"
+                        :key="item.id"
+                        class="flex justify-between items-start border-b pb-4"
+                    >
+                        <div>
+                            <h3 class="font-semibold">{{ item.name }}</h3>
+                            <p class="text-sm text-gray-600">
+                                Qty: {{ item.quantity }}
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">
+                                Rs {{ item.price * item.quantity }}
+                            </p>
+                            <button
+                                @click="cart.removeFromCart(item.id)"
+                                class="text-red-500 text-sm mt-1 hover:underline"
+                            >
+                                Remove
+                            </button>
+                        </div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <p class="font-semibold text-gray-900">
-                            Rs {{ item.price * item.quantity }}
-                        </p>
-                        <button
-                            @click="cart.removeFromCart(item.id)"
-                            class="text-red-500 hover:text-red-700"
-                        >
-                            Remove
-                        </button>
-                    </div>
+                </div>
+
+                <div v-else class="text-center py-12 text-gray-500">
+                    Your cart is empty.
                 </div>
             </div>
 
-            <!-- Empty Cart -->
-            <div
-                v-else
-                class="flex-1 flex items-center justify-center text-gray-600"
-            >
-                Your cart is empty.
-            </div>
-
             <!-- Footer -->
-            <div class="mt-6 border-t pt-4">
-                <p class="text-lg font-semibold text-gray-900">
-                    Total: Rs {{ cart.total() }}
-                </p>
-                <div class="flex space-x-4 mt-4">
+            <div class="p-6 border-t mt-auto">
+                <div class="flex justify-between text-xl font-semibold mb-6">
+                    <span>Total</span>
+                    <span>Rs {{ cart.total() }}</span>
+                </div>
+
+                <div class="flex gap-3">
                     <button
                         @click="cart.clearCart"
-                        class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300"
+                        class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl hover:bg-gray-300"
                     >
                         Clear Cart
                     </button>
-                    <button
-                        class="bg-amber-500 text-white px-6 py-2 rounded hover:bg-amber-600"
+                    <NuxtLink
+                        to="/checkout"
+                        @click="closeCart"
+                        class="flex-1 bg-amber-500 text-white py-3 rounded-xl text-center hover:bg-amber-600 font-semibold"
                     >
                         Checkout
-                    </button>
+                    </NuxtLink>
                 </div>
             </div>
         </div>
@@ -99,6 +86,7 @@ const showCart = ref(false);
 function openCart() {
     showCart.value = true;
 }
+
 function closeCart() {
     showCart.value = false;
 }

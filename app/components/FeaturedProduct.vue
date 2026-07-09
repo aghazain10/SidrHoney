@@ -70,6 +70,13 @@
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                         required
                     />
+                    <label class="block mb-2 text-gray-700">Your Email</label>
+                    <input
+                        type="email"
+                        v-model="customOrder.email"
+                        class="w-full border rounded-lg px-4 py-2 mb-4"
+                        required
+                    />
 
                     <label class="block mb-2 text-gray-700"
                         >Quantity (kg)</label
@@ -149,13 +156,45 @@ function handleAddToCart() {
     cart.addToCart(product, 1);
 }
 
-const customOrder = ref({ name: "", quantity: "", message: "" });
+const customOrder = ref({ name: "", quantity: "", message: "", email: "" });
 
-function submitCustomOrder() {
-    alert(
-        `Custom order submitted:\nName: ${customOrder.value.name}\nQuantity: ${customOrder.value.quantity}kg\nMessage: ${customOrder.value.message}`,
-    );
-    showModal.value = false;
-    customOrder.value = { name: "", quantity: "", message: "" };
+const config = useRuntimeConfig();
+
+async function submitCustomOrder() {
+    try {
+        const response = await fetch(`${config.public.apiBase}/api/messages`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                name: customOrder.value.name,
+                quantity: customOrder.value.quantity,
+                message: customOrder.value.message,
+                email: customOrder.value.email,
+                // optionally add email/phone/address if you collect them
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            alert("Your custom order has been submitted successfully!");
+            showModal.value = false;
+            customOrder.value = {
+                name: "",
+                quantity: "",
+                message: "",
+                email: "",
+            };
+        } else {
+            // Laravel validation errors come back as 422 with a `message` field
+            alert(data.message || "Something went wrong. Please try again.");
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Error submitting order.");
+    }
 }
 </script>

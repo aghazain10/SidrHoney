@@ -6,6 +6,7 @@ export default {
         "./plugins/**/*.{js,ts}",
         "./app.vue",
     ],
+    plugins: [require("@tailwindcss/typography")],
     theme: {
         extend: {
             colors: {
