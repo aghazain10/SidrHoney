@@ -40,7 +40,7 @@
                     @click="contactWhatsApp"
                     class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl font-semibold transition"
                 >
-                    📱
+                    📞
                 </button>
             </div>
         </div>
@@ -50,7 +50,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useCartStore } from "~/stores/cart";
-
+const { showToast } = useToast();
 const cartStore = useCartStore();
 
 const sizeOptions = [
@@ -74,11 +74,12 @@ function addToCart() {
         weight: selectedSize.value.weight,
     };
 
-    cartStore.addToCart(product, 1); // Assuming your store has this method
+    cartStore.addToCart(product, 1);
+    showToast(`${product.name} added to cart!`);
 }
 
 function contactWhatsApp() {
-    const phone = "923000000000"; // Change to your number
+    const phone = "923311116915"; // Change to your number
     const message = encodeURIComponent(
         `Interested in ${selectedSize.value.label} Sidr Honey`,
     );

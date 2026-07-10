@@ -12,53 +12,44 @@
             class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6"
         >
             <img src="/gmp.png" alt="GMP Certified" class="w-24 h-24 mx-auto" />
+            <img src="/iso.png" alt="ISO Certified" class="w-24 h-24 mx-auto" />
             <img
-                src="/gmp.png"
+                src="/haccp.png"
                 alt="HACCP Certified"
                 class="w-24 h-24 mx-auto"
             />
             <img
-                src="/gmp.png"
+                src="/halal.png"
                 alt="Halal Certified"
                 class="w-24 h-24 mx-auto"
             />
-            <img src="/gmp.png" alt="ISO Certified" class="w-24 h-24 mx-auto" />
-            <!-- Add more badges -->
         </div>
 
-        <!-- Certificates Carousel -->
-        <div class="relative mt-12 max-w-6xl mx-auto px-6">
-            <div class="flex overflow-x-hidden">
-                <div
-                    v-for="(cert, index) in visibleCerts"
-                    :key="index"
-                    class="min-w-[300px] md:min-w-[350px] lg:min-w-[380px] bg-gray-50 rounded-lg shadow p-4 mx-2 flex-shrink-0 cursor-pointer"
-                    @click="openModal(cert)"
-                >
-                    <img
-                        :src="cert.image"
-                        :alt="cert.title"
-                        class="w-full h-56 object-contain rounded-md"
-                    />
-                    <h3 class="text-center mt-4 font-semibold text-gray-900">
-                        {{ cert.title }}
-                    </h3>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <button
-                @click="prevSlide"
-                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-amber-500 text-white p-2 rounded-full shadow hover:bg-amber-600"
+        <!-- Certificates Carousel (using shared ImageSlider) -->
+        <div class="mt-12 max-w-6xl mx-auto px-6">
+            <ImageSlider
+                :images="certificates"
+                :desktop-visible="3"
+                :mobile-visible="1"
             >
-                ‹
-            </button>
-            <button
-                @click="nextSlide"
-                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-amber-500 text-white p-2 rounded-full shadow hover:bg-amber-600"
-            >
-                ›
-            </button>
+                <template #default="{ image }">
+                    <div
+                        class="bg-gray-50 rounded-lg shadow p-4 cursor-pointer h-full"
+                        @click="openModal(image)"
+                    >
+                        <img
+                            :src="image.src"
+                            :alt="image.title"
+                            class="w-full h-56 object-contain rounded-md"
+                        />
+                        <h3
+                            class="text-center mt-4 font-semibold text-gray-900"
+                        >
+                            {{ image.title }}
+                        </h3>
+                    </div>
+                </template>
+            </ImageSlider>
         </div>
 
         <!-- Modal -->
@@ -70,7 +61,6 @@
             <div
                 class="bg-white rounded-lg shadow-lg max-w-3xl w-full relative p-6"
             >
-                <!-- Close Button -->
                 <button
                     @click="showModal = false"
                     class="absolute top-4 right-4 text-gray-700 hover:text-amber-600"
@@ -90,9 +80,8 @@
                     </svg>
                 </button>
 
-                <!-- Enlarged Certificate -->
                 <img
-                    :src="selectedCert.image"
+                    :src="selectedCert.src"
                     :alt="selectedCert.title"
                     class="w-full max-h-[80vh] object-contain rounded-md mx-auto"
                 />
@@ -108,38 +97,11 @@
 import { ref } from "vue";
 
 const certificates = ref([
-    { title: "GMP Certificate", image: "/certificates.png" },
-    { title: "HACCP Certificate", image: "/certificates.png" },
-    { title: "Halal Certificate", image: "/certificates.png" },
-    { title: "ISO Certificate", image: "/certificates.png" },
-    // Add more certificates
+    { title: "GMP Certificate", src: "/gmp-certificate.jpg" },
+    { title: "HACCP Certificate", src: "/haccp-certificate.jpg" },
+    { title: "Halal Certificate", src: "/halal-certificate.jpg" },
+    { title: "ISO Certificate", src: "/iso-certificate.jpg" },
 ]);
-
-const currentIndex = ref(0);
-const visibleCerts = ref(
-    certificates.value.slice(currentIndex.value, currentIndex.value + 3),
-);
-
-function updateVisibleCerts() {
-    visibleCerts.value = certificates.value.slice(
-        currentIndex.value,
-        currentIndex.value + 3,
-    );
-}
-
-function nextSlide() {
-    if (currentIndex.value < certificates.value.length - 3) {
-        currentIndex.value++;
-        updateVisibleCerts();
-    }
-}
-
-function prevSlide() {
-    if (currentIndex.value > 0) {
-        currentIndex.value--;
-        updateVisibleCerts();
-    }
-}
 
 const showModal = ref(false);
 const selectedCert = ref({});

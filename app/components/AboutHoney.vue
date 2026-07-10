@@ -5,7 +5,7 @@
         >
             <!-- Image -->
             <img
-                src="/shilajit.jpg"
+                src="/honey-banner.jpeg"
                 alt="About Sidr Honey"
                 class="w-full h-96 object-cover rounded-lg shadow-md"
             />
@@ -79,9 +79,10 @@
 
                 <!-- Call to Action -->
                 <button
+                    @click="$router.push('#shop')"
                     class="mt-8 bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
                 >
-                    Learn More
+                    Shop Now
                 </button>
             </div>
         </div>

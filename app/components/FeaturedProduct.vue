@@ -4,10 +4,22 @@
         class="bg-white py-16 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
     >
         <!-- Product Image -->
-        <img
-            src="/shilajit.jpg"
-            alt="Sidr Honey Jar"
-            class="w-full h-96 object-cover rounded-lg shadow-md"
+        <!-- Product Image -->
+        <ImageSlider
+            :images="[
+                { src: '/honey-product-1.jpeg', alt: 'Sidr Honey Jar' },
+                {
+                    src: '/honey-product-2.jpeg',
+                    alt: 'Sidr Honey Jar Side View',
+                },
+                {
+                    src: '/honey-product-3.jpeg',
+                    alt: 'Sidr Honey Jar Front View',
+                },
+                { src: '/sdr-honey-banner.jpeg', alt: 'Sidr Honey Texture' },
+            ]"
+            :desktop-visible="1"
+            :mobile-visible="1"
         />
 
         <!-- Product Details -->
@@ -146,14 +158,16 @@ function selectQuantity(value) {
     }
 }
 
+const { showToast } = useToast();
+
 function handleAddToCart() {
-    // Each package is treated as one cart item; quantity here is number of packages
     const product = {
         id: `sidr-honey-${selectedQuantity.value}kg`,
         name: `Sidr Honey ${selectedQuantity.value}kg`,
         price: displayPrice.value,
     };
     cart.addToCart(product, 1);
+    showToast(`${product.name} added to cart!`);
 }
 
 const customOrder = ref({ name: "", quantity: "", message: "", email: "" });
@@ -198,3 +212,14 @@ async function submitCustomOrder() {
     }
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>
