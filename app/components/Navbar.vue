@@ -4,7 +4,10 @@
             class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
         >
             <!-- Logo -->
-            <h1 class="text-xl font-bold text-amber-600">Sidr Honey</h1>
+            <h1 class="text-xl font-bold text-amber-600">
+                <span class="font-aspire">Sdr</span>
+                <span> Honey</span>
+            </h1>
 
             <!-- Desktop Menu -->
             <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">

@@ -22,10 +22,14 @@
             <!-- Review Card -->
             <div class="bg-white shadow-lg rounded-lg p-6 text-left">
                 <div class="flex items-center gap-4">
-                    <img
+                    <NuxtImg
                         src="/user.png"
                         alt="Customer"
                         class="w-12 h-12 rounded-full object-cover"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <div>
                         <h3 class="font-semibold text-gray-900">Ali Khan</h3>
@@ -40,10 +44,14 @@
 
             <div class="bg-white shadow-lg rounded-lg p-6 text-left">
                 <div class="flex items-center gap-4">
-                    <img
+                    <NuxtImg
                         src="/user.png"
                         alt="Customer"
                         class="w-12 h-12 rounded-full object-cover"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <div>
                         <h3 class="font-semibold text-gray-900">Sara Ahmed</h3>
@@ -58,10 +66,14 @@
 
             <div class="bg-white shadow-lg rounded-lg p-6 text-left">
                 <div class="flex items-center gap-4">
-                    <img
+                    <NuxtImg
                         src="/user.png"
                         alt="Customer"
                         class="w-12 h-12 rounded-full object-cover"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <div>
                         <h3 class="font-semibold text-gray-900">Ahmed Raza</h3>

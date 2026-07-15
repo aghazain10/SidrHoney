@@ -137,16 +137,16 @@ const selectedQuantity = ref(1);
 const showModal = ref(false);
 
 const quantities = [
-    { label: "1kg", value: 1 },
-    { label: "5kg", value: 5 },
-    { label: "10kg", value: 10 },
+    { label: "450g", value: 450 },
+    { label: "1kg", value: 1000 },
+    { label: "5kg", value: 5000 },
     { label: "Custom Order", value: "custom" },
 ];
 
 const displayPrice = computed(() => {
-    if (selectedQuantity.value === 1) return 4800;
-    if (selectedQuantity.value === 5) return 22000;
-    if (selectedQuantity.value === 10) return 42000;
+    if (selectedQuantity.value === 450) return 2500;
+    if (selectedQuantity.value === 1000) return 4800;
+    if (selectedQuantity.value === 5000) return 22000;
     return "—";
 });
 

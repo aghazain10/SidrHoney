@@ -7,16 +7,22 @@
             Nature’s gift for wellness and vitality
         </p>
 
-        <div class="mt-12 flex flex-wrap justify-center gap-6">
+        <div
+            class="mt-12 grid grid-cols-2 gap-6 justify-items-center max-w-md mx-auto md:max-w-none md:flex md:flex-wrap md:justify-center"
+        >
             <!-- Benefit 1 -->
             <div class="honeycomb">
                 <div
                     class="hex bg-white shadow-lg p-6 flex flex-col items-center"
                 >
-                    <img
+                    <NuxtImg
                         src="/immune.png"
                         alt="Boosts Immunity"
                         class="w-12 h-12 mb-3"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <h3 class="font-semibold text-lg text-amber-600">
                         Boosts Immunity
@@ -33,10 +39,14 @@
                 <div
                     class="hex bg-white shadow-lg p-6 flex flex-col items-center"
                 >
-                    <img
+                    <NuxtImg
                         src="/digestion.png"
                         alt="Aids Digestion"
                         class="w-12 h-12 mb-3"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <h3 class="font-semibold text-lg text-amber-600">
                         Aids Digestion
@@ -48,15 +58,19 @@
                 </div>
             </div>
 
-            <!-- Benefit 3 -->
-            <div class="honeycomb">
+            <!-- Benefit 3 (middle, centered on mobile) -->
+            <div class="honeycomb col-span-2 justify-self-center md:col-span-1">
                 <div
                     class="hex bg-white shadow-lg p-6 flex flex-col items-center"
                 >
-                    <img
+                    <NuxtImg
                         src="/athlete.png"
                         alt="Natural Energy"
                         class="w-12 h-12 mb-3"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
                     />
                     <h3 class="font-semibold text-lg text-amber-600">
                         Natural Energy
@@ -64,6 +78,54 @@
                     <p class="text-gray-600 text-sm text-center mt-2">
                         Provides a quick, healthy energy boost — perfect for
                         daily vitality.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="honeycomb">
+                <div
+                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
+                >
+                    <NuxtImg
+                        src="/antibacterial.png"
+                        alt="Antibacterial Properties"
+                        class="w-12 h-12 mb-3"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
+                    />
+                    <h3 class="font-semibold text-lg text-amber-600">
+                        Antibacterial
+                    </h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">
+                        Natural compounds help fight infections and promote
+                        <br />healing.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div class="honeycomb">
+                <div
+                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
+                >
+                    <NuxtImg
+                        src="/sleep.png"
+                        alt="Better Sleep"
+                        class="w-12 h-12 mb-3"
+                        width="48"
+                        height="48"
+                        format="webp"
+                        loading="lazy"
+                    />
+                    <h3 class="font-semibold text-lg text-amber-600">
+                        Better Sleep
+                    </h3>
+                    <p class="text-gray-600 text-sm text-center mt-2">
+                        Helps regulate sleep patterns naturally, promoting
+                        deeper, restful sleep.
                     </p>
                 </div>
             </div>

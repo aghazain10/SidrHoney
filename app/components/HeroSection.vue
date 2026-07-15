@@ -1,9 +1,15 @@
 <template>
-    <section class="bg-white text-center py-12">
-        <img
+    <section class="bg-white text-center pt-12">
+        <NuxtImg
             src="/banner.jpeg"
             alt="Sidr Honey"
             class="object-cover rounded-lg shadow-md w-full"
+            width="800"
+            height="512"
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+            preload
         />
         <h1 class="text-3xl font-bold mt-6 text-gray-900">
             Pure Natural Honey. Delivered Fresh.

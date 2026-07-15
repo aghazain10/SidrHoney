@@ -10,10 +10,14 @@
             <div
                 class="p-6 bg-white shadow rounded-lg hover:shadow-lg transition"
             >
-                <img
+                <NuxtImg
                     src="/organic.png"
                     alt="100% Pure Honey"
                     class="mx-auto w-12 h-12 mb-3"
+                    width="48"
+                    height="48"
+                    format="webp"
+                    loading="lazy"
                 />
                 <h3 class="font-bold text-lg text-amber-600">
                     100% Pure Honey
@@ -28,10 +32,14 @@
             <div
                 class="p-6 bg-white shadow rounded-lg hover:shadow-lg transition"
             >
-                <img
+                <NuxtImg
                     src="/lab.png"
                     alt="Lab Tested"
                     class="mx-auto w-12 h-12 mb-3"
+                    width="48"
+                    height="48"
+                    format="webp"
+                    loading="lazy"
                 />
                 <h3 class="font-bold text-lg text-amber-600">Lab Tested</h3>
                 <p class="mt-2 text-gray-600">
@@ -44,10 +52,14 @@
             <div
                 class="p-6 bg-white shadow rounded-lg hover:shadow-lg transition"
             >
-                <img
+                <NuxtImg
                     src="/harvest.png"
                     alt="Sustainably Harvested"
                     class="mx-auto w-12 h-12 mb-3"
+                    width="48"
+                    height="48"
+                    format="webp"
+                    loading="lazy"
                 />
                 <h3 class="font-bold text-lg text-amber-600">
                     Sustainably Harvested
@@ -62,10 +74,14 @@
             <div
                 class="p-6 bg-white shadow rounded-lg hover:shadow-lg transition"
             >
-                <img
+                <NuxtImg
                     src="/shipping.png"
                     alt="Fast Delivery"
                     class="mx-auto w-12 h-12 mb-3"
+                    width="48"
+                    height="48"
+                    format="webp"
+                    loading="lazy"
                 />
                 <h3 class="font-bold text-lg text-amber-600">Fast Delivery</h3>
                 <p class="mt-2 text-gray-600">

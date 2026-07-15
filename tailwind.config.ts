@@ -20,6 +20,7 @@ export default {
             fontFamily: {
                 sans: ["Inter", "system-ui", "sans-serif"],
                 display: ["Playfair Display", "serif"],
+                aspire: ["LT Aspire Neue Black", "sans-serif"],
             },
         },
     },

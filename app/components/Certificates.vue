@@ -11,17 +11,41 @@
         <div
             class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6"
         >
-            <img src="/gmp.png" alt="GMP Certified" class="w-24 h-24 mx-auto" />
-            <img src="/iso.png" alt="ISO Certified" class="w-24 h-24 mx-auto" />
-            <img
+            <NuxtImg
+                src="/gmp.png"
+                alt="GMP Certified"
+                class="w-24 h-24 mx-auto"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
+            />
+            <NuxtImg
+                src="/iso.png"
+                alt="ISO Certified"
+                class="w-24 h-24 mx-auto"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
+            />
+            <NuxtImg
                 src="/haccp.png"
                 alt="HACCP Certified"
                 class="w-24 h-24 mx-auto"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
             />
-            <img
+            <NuxtImg
                 src="/halal.png"
                 alt="Halal Certified"
                 class="w-24 h-24 mx-auto"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
             />
         </div>
 
@@ -37,10 +61,15 @@
                         class="bg-gray-50 rounded-lg shadow p-4 cursor-pointer h-full"
                         @click="openModal(image)"
                     >
-                        <img
+                        <NuxtImg
                             :src="image.src"
                             :alt="image.title"
                             class="w-full h-56 object-contain rounded-md"
+                            width="600"
+                            height="400"
+                            sizes="(max-width: 768px) 100vw, 400px"
+                            format="webp"
+                            loading="lazy"
                         />
                         <h3
                             class="text-center mt-4 font-semibold text-gray-900"
@@ -80,10 +109,14 @@
                     </svg>
                 </button>
 
-                <img
+                <NuxtImg
                     :src="selectedCert.src"
                     :alt="selectedCert.title"
                     class="w-full max-h-[80vh] object-contain rounded-md mx-auto"
+                    width="800"
+                    height="600"
+                    format="webp"
+                    loading="lazy"
                 />
                 <h3 class="mt-4 text-center font-semibold text-gray-900">
                     {{ selectedCert.title }}
@@ -100,7 +133,6 @@ const certificates = ref([
     { title: "GMP Certificate", src: "/gmp-certificate.jpg" },
     { title: "HACCP Certificate", src: "/haccp-certificate.jpg" },
     { title: "Halal Certificate", src: "/halal-certificate.jpg" },
-    { title: "ISO Certificate", src: "/iso-certificate.jpg" },
 ]);
 
 const showModal = ref(false);

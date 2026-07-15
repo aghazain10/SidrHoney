@@ -15,10 +15,15 @@
                 >
                     <slot :image="image" :index="index">
                         <!-- default rendering if no slot is provided -->
-                        <img
+                        <NuxtImg
                             :src="image.src"
                             :alt="image.alt || ''"
                             :class="imageClass"
+                            :width="imgWidth"
+                            :height="imgHeight"
+                            format="webp"
+                            :loading="index === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="index === 0 ? 'high' : undefined"
                         />
                     </slot>
                 </div>
@@ -55,6 +60,8 @@ const props = defineProps({
         type: String,
         default: "w-full h-96 object-cover rounded-lg shadow-md",
     },
+    imgWidth: { type: [String, Number], default: 896 },
+    imgHeight: { type: [String, Number], default: 672 },
 });
 
 const currentIndex = ref(0);

@@ -4,10 +4,14 @@
             class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
         >
             <!-- Image -->
-            <img
+            <NuxtImg
                 src="/honey-banner.jpeg"
                 alt="About Sidr Honey"
                 class="w-full h-96 object-cover rounded-lg shadow-md"
+                width="896"
+                height="672"
+                format="webp"
+                loading="lazy"
             />
 
             <!-- Content -->
@@ -25,7 +29,15 @@
                 <!-- Highlights -->
                 <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="flex items-start gap-3">
-                        <img src="/lab.png" alt="Origin" class="w-8 h-8" />
+                        <NuxtImg
+                            src="/lab.png"
+                            alt="Origin"
+                            class="w-8 h-8"
+                            width="32"
+                            height="32"
+                            format="webp"
+                            loading="lazy"
+                        />
                         <div>
                             <h3 class="font-semibold text-gray-900">
                                 Authentic Origin
@@ -38,7 +50,15 @@
                     </div>
 
                     <div class="flex items-start gap-3">
-                        <img src="/lab.png" alt="Quality" class="w-8 h-8" />
+                        <NuxtImg
+                            src="/lab.png"
+                            alt="Origin"
+                            class="w-8 h-8"
+                            width="32"
+                            height="32"
+                            format="webp"
+                            loading="lazy"
+                        />
                         <div>
                             <h3 class="font-semibold text-gray-900">
                                 Premium Quality
@@ -51,7 +71,15 @@
                     </div>
 
                     <div class="flex items-start gap-3">
-                        <img src="/lab.png" alt="Tradition" class="w-8 h-8" />
+                        <NuxtImg
+                            src="/lab.png"
+                            alt="Origin"
+                            class="w-8 h-8"
+                            width="32"
+                            height="32"
+                            format="webp"
+                            loading="lazy"
+                        />
                         <div>
                             <h3 class="font-semibold text-gray-900">
                                 Traditional Harvest
@@ -64,7 +92,15 @@
                     </div>
 
                     <div class="flex items-start gap-3">
-                        <img src="/lab.png" alt="Benefits" class="w-8 h-8" />
+                        <NuxtImg
+                            src="/lab.png"
+                            alt="Origin"
+                            class="w-8 h-8"
+                            width="32"
+                            height="32"
+                            format="webp"
+                            loading="lazy"
+                        />
                         <div>
                             <h3 class="font-semibold text-gray-900">
                                 Natural Benefits

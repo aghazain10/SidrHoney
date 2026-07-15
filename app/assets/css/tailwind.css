@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "LT Aspire Neue Black";
+    src: url("/fonts/LTAspirerNeue-Heavy.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
