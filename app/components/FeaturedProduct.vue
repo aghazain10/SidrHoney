@@ -133,7 +133,7 @@ import { useCartStore } from "~/stores/cart";
 
 const cart = useCartStore();
 
-const selectedQuantity = ref(1);
+const selectedQuantity = ref(450);
 const showModal = ref(false);
 
 const quantities = [
@@ -163,7 +163,7 @@ const { showToast } = useToast();
 function handleAddToCart() {
     const product = {
         id: `sidr-honey-${selectedQuantity.value}kg`,
-        name: `Sidr Honey ${selectedQuantity.value}kg`,
+        name: `Sidr Honey ${selectedQuantity.value}g`,
         price: displayPrice.value,
     };
     cart.addToCart(product, 1);

@@ -54,9 +54,9 @@ const { showToast } = useToast();
 const cartStore = useCartStore();
 
 const sizeOptions = [
-    { weight: 1, label: "1 Kg", price: 2400 },
-    { weight: 5, label: "5 Kg", price: 11500 },
-    { weight: 10, label: "10 Kg", price: 22000 },
+    { weight: 450, label: "450g", price: 2500 },
+    { weight: 1000, label: "1kg", price: 4800 },
+    { weight: 5000, label: "5kg", price: 22000 },
 ];
 
 const selectedSize = ref(sizeOptions[0]);
