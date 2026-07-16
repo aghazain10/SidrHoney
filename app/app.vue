@@ -1,6 +1,8 @@
 <template>
     <div class="min-h-screen bg-white text-neutral-900">
+        <ProductSchema />
         <NuxtPage />
+
         <Transition name="fade">
             <div
                 v-if="message"
