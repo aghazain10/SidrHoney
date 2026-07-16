@@ -198,6 +198,7 @@ const orderSuccess = ref(false);
 const orderData = ref(null);
 const errorMessage = ref("");
 const loading = ref(false);
+const config = useRuntimeConfig();
 
 const isCartEmpty = computed(() => cart.cartItems.value.length === 0);
 
@@ -217,7 +218,7 @@ async function submitOrder() {
         };
 
         const res = await axios.post(
-            "http://127.0.0.1:8000/api/orders",
+            `${config.public.apiBase}/api/orders`,
             payload,
         );
 
