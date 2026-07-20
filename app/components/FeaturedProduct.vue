@@ -4,7 +4,6 @@
         class="bg-white py-16 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
     >
         <!-- Product Image -->
-        <!-- Product Image -->
         <ImageSlider
             :images="[
                 { src: '/honey-product-1.jpeg', alt: 'Sidr Honey Jar' },
@@ -33,27 +32,48 @@
 
             <!-- Quantity Selector -->
             <div class="mt-6">
-                <p class="text-gray-700 font-medium mb-2">Select Quantity</p>
-                <div class="flex gap-4">
+                <p class="text-gray-700 font-medium mb-3">Select Quantity</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     <button
-                        v-for="option in quantities"
-                        :key="option.value"
-                        @click="selectQuantity(option.value)"
+                        v-for="option in options"
+                        :key="option.label"
+                        @click="selectOption(option)"
                         :class="[
-                            'px-4 py-2 rounded-lg border',
-                            selectedQuantity === option.value
-                                ? 'bg-amber-500 text-white border-amber-500'
+                            'px-3 py-3 rounded-xl border text-center transition',
+                            selectedOption.label === option.label
+                                ? 'bg-amber-500 border-amber-500 text-white shadow'
                                 : 'bg-white text-gray-700 border-gray-300 hover:bg-amber-50',
                         ]"
                     >
-                        {{ option.label }}
+                        <span class="block font-semibold text-sm">
+                            {{ option.label }}
+                        </span>
+                        <span
+                            class="block text-xs mt-0.5"
+                            :class="
+                                selectedOption.label === option.label
+                                    ? 'text-white/90'
+                                    : 'text-gray-500'
+                            "
+                        >
+                            {{
+                                option.price
+                                    ? `Rs. ${option.price.toLocaleString()}`
+                                    : "Contact us"
+                            }}
+                        </span>
                     </button>
                 </div>
             </div>
 
             <!-- Price -->
-            <p class="mt-4 text-lg font-semibold text-gray-900">
-                Price: Rs. {{ displayPrice }}
+            <p class="mt-6 text-lg font-semibold text-gray-900">
+                <template v-if="selectedOption.price">
+                    Price: Rs. {{ selectedOption.price.toLocaleString() }}
+                </template>
+                <template v-else>
+                    Custom pricing — send us your requirements
+                </template>
             </p>
 
             <!-- Add to Cart -->
@@ -61,7 +81,11 @@
                 @click="handleAddToCart"
                 class="mt-6 bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
             >
-                Add to Cart
+                {{
+                    selectedOption.price
+                        ? "Add to Cart"
+                        : "Request Custom Order"
+                }}
             </button>
         </div>
 
@@ -128,50 +152,48 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useCartStore } from "~/stores/cart";
 
 const cart = useCartStore();
-
-const selectedQuantity = ref(450);
 const showModal = ref(false);
 
-const quantities = [
-    { label: "450g", value: 450 },
-    { label: "1kg", value: 1000 },
-    { label: "5kg", value: 5000 },
-    { label: "Custom Order", value: "custom" },
+const options = [
+    { label: "450g", weight: 450, price: 2500 },
+    { label: "450g x2", weight: 900, price: 4800 },
+    { label: "450g x3", weight: 1350, price: 7000 },
+    { label: "5kg", weight: 5000, price: 22000 },
+    { label: "10kg", weight: 10000, price: 45000 },
+    { label: "Custom Order", weight: "custom", price: null },
 ];
 
-const displayPrice = computed(() => {
-    if (selectedQuantity.value === 450) return 2500;
-    if (selectedQuantity.value === 1000) return 4800;
-    if (selectedQuantity.value === 5000) return 22000;
-    return "—";
-});
+const selectedOption = ref(options[0]);
 
-function selectQuantity(value) {
-    if (value === "custom") {
+function selectOption(option) {
+    if (option.weight === "custom") {
         showModal.value = true;
     } else {
-        selectedQuantity.value = value;
+        selectedOption.value = option;
     }
 }
 
 const { showToast } = useToast();
 
 function handleAddToCart() {
+    if (selectedOption.value.weight === "custom") {
+        showModal.value = true;
+        return;
+    }
     const product = {
-        id: `sidr-honey-${selectedQuantity.value}kg`,
-        name: `Sidr Honey ${selectedQuantity.value}g`,
-        price: displayPrice.value,
+        id: `sidr-honey-${selectedOption.value.weight}g`,
+        name: `Sidr Honey ${selectedOption.value.label}`,
+        price: selectedOption.value.price,
     };
     cart.addToCart(product, 1);
     showToast(`${product.name} added to cart!`);
 }
 
 const customOrder = ref({ name: "", quantity: "", message: "", email: "" });
-
 const config = useRuntimeConfig();
 
 async function submitCustomOrder() {
@@ -187,7 +209,6 @@ async function submitCustomOrder() {
                 quantity: customOrder.value.quantity,
                 message: customOrder.value.message,
                 email: customOrder.value.email,
-                // optionally add email/phone/address if you collect them
             }),
         });
 
@@ -203,7 +224,6 @@ async function submitCustomOrder() {
                 email: "",
             };
         } else {
-            // Laravel validation errors come back as 422 with a `message` field
             alert(data.message || "Something went wrong. Please try again.");
         }
     } catch (error) {
@@ -212,14 +232,3 @@ async function submitCustomOrder() {
     }
 }
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-</style>

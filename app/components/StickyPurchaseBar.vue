@@ -5,10 +5,13 @@
     >
         <div class="flex items-center justify-between max-w-2xl mx-auto gap-3">
             <!-- Price -->
-            <div class="min-w-[90px]">
+            <div class="min-w-[100px]">
                 <span class="text-xs text-gray-500">Price</span>
-                <div class="text-2xl font-bold text-gray-900">
-                    Rs. {{ selectedPrice }}
+                <div class="text-xl font-bold text-gray-900">
+                    <template v-if="selectedSize.price">
+                        Rs. {{ selectedSize.price.toLocaleString() }}
+                    </template>
+                    <template v-else>Contact us</template>
                 </div>
             </div>
 
@@ -16,14 +19,19 @@
             <div class="flex-1">
                 <select
                     v-model="selectedSize"
-                    class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base font-medium focus:outline-none focus:border-amber-500"
+                    class="w-full border border-gray-300 rounded-xl px-3 py-3 text-sm font-medium focus:outline-none focus:border-amber-500"
                 >
                     <option
                         v-for="option in sizeOptions"
-                        :key="option.weight"
+                        :key="option.label"
                         :value="option"
                     >
-                        {{ option.label }} — Rs. {{ option.price }}
+                        {{ option.label }} —
+                        {{
+                            option.price
+                                ? `Rs. ${option.price.toLocaleString()}`
+                                : "Custom"
+                        }}
                     </option>
                 </select>
             </div>
@@ -32,13 +40,13 @@
             <div class="flex gap-2">
                 <button
                     @click="addToCart"
-                    class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold transition"
+                    class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-3 rounded-xl font-semibold transition whitespace-nowrap"
                 >
-                    Add to Cart
+                    {{ selectedSize.price ? "Add" : "Inquire" }}
                 </button>
                 <button
                     @click="contactWhatsApp"
-                    class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl font-semibold transition"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-xl font-semibold transition"
                 >
                     📞
                 </button>
@@ -48,27 +56,34 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed } from "vue";
 import { useCartStore } from "~/stores/cart";
+
 const { showToast } = useToast();
 const cartStore = useCartStore();
 
 const sizeOptions = [
-    { weight: 450, label: "450g", price: 2500 },
-    { weight: 1000, label: "1kg", price: 4800 },
-    { weight: 5000, label: "5kg", price: 22000 },
+    { label: "450g", weight: 450, price: 2500 },
+    { label: "450g x2", weight: 900, price: 4800 },
+    { label: "450g x3", weight: 1350, price: 7000 },
+    { label: "5kg", weight: 5000, price: 22000 },
+    { label: "10kg", weight: 10000, price: 45000 },
+    { label: "Custom Order", weight: "custom", price: null },
 ];
 
 const selectedSize = ref(sizeOptions[0]);
-const selectedPrice = computed(() => selectedSize.value.price);
 
 const props = defineProps({
     isCartOpen: { type: Boolean, default: false },
 });
 
 function addToCart() {
+    if (selectedSize.value.weight === "custom") {
+        contactWhatsApp();
+        return;
+    }
     const product = {
-        id: `sidr-honey-${selectedSize.value.weight}kg`,
+        id: `sidr-honey-${selectedSize.value.weight}g`,
         name: `Sidr Honey ${selectedSize.value.label}`,
         price: selectedSize.value.price,
         weight: selectedSize.value.weight,
@@ -79,7 +94,7 @@ function addToCart() {
 }
 
 function contactWhatsApp() {
-    const phone = "923311116915"; // Change to your number
+    const phone = "923311116915";
     const message = encodeURIComponent(
         `Interested in ${selectedSize.value.label} Sidr Honey`,
     );
