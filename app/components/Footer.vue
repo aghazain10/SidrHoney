@@ -14,10 +14,10 @@
                     <p
                         class="mt-4 text-gray-400 text-sm leading-relaxed max-w-md"
                     >
-                        Sourced from the untouched Sidr forests of Gilgit
-                        Baltistan, our honey is harvested naturally and
-                        sustainably, with nothing added and nothing taken away.
-                        Just pure, raw honey the way nature intended.
+                        SDR Honey is authentic Sidr Honey from Pakistan, sourced exclusively
+                        from the wild Sidr forests of Karak. Enjoy premium raw honey with a
+                        naturally rich flavor and delicate taste. With ISO 9001, ISO 22000, GMP,
+                        HACCP, and Halal certifications, we provide quality, purity, and confidence.
                     </p>
 
                     <!-- Social Icons -->

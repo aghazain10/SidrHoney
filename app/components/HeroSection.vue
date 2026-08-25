@@ -12,11 +12,12 @@
             preload
         />
         <h1 class="text-3xl font-bold mt-6 text-gray-900">
-            Pure Natural Honey. Delivered Fresh.
+            100% Pure Sidr Honey. Straight from the Hive.
         </h1>
-        <p class="text-lg text-gray-600 mt-2">
-            Experience the richness of authentic Sidr honey, straight from the
-            source.
+<p class="text-lg text-gray-600 mt-2">
+            A Rare Expression of Nature.<br>
+            Pakistan's premium raw, single-origin Sidr honey, harvested from the wild Sidr forests of Karak.<br>
+            Never heated, never blended, never artificially processed.
         </p>
         <div class="mt-6 flex justify-center gap-4">
             <a

@@ -1,33 +1,48 @@
 <template>
     <section
         id="shop"
-        class="bg-white py-16 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
+        class="bg-white py-16 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12"
     >
         <!-- Product Image -->
-        <ImageSlider
-            :images="[
-                { src: '/honey-product-1.jpeg', alt: 'Sidr Honey Jar' },
-                {
-                    src: '/honey-product-2.jpeg',
-                    alt: 'Sidr Honey Jar Side View',
-                },
-                {
-                    src: '/honey-product-3.jpeg',
-                    alt: 'Sidr Honey Jar Front View',
-                },
-                { src: '/sdr-honey-banner.jpeg', alt: 'Sidr Honey Texture' },
-            ]"
-            :desktop-visible="1"
-            :mobile-visible="1"
-        />
+        <div class="h-full">
+            <ImageSlider
+                :images="[
+                    { src: '/honey-product-1.jpeg', alt: 'Sidr Honey Jar' },
+                    {
+                        src: '/honey-product-2.jpeg',
+                        alt: 'Sidr Honey Jar Side View',
+                    },
+                    {
+                        src: '/honey-product-3.jpeg',
+                        alt: 'Sidr Honey Jar Front View',
+                    },
+                    { src: '/sdr-honey-banner.jpeg', alt: 'Sidr Honey Texture' },
+                ]"
+                :desktop-visible="1"
+                :mobile-visible="1"
+                :img-width="1056"
+                :img-height="1500"
+                image-class="w-full h-full object-cover rounded-lg shadow-md"
+                class="h-full"
+            />
+        </div>
 
         <!-- Product Details -->
         <div>
-            <h2 class="text-3xl font-bold text-gray-900">Premium Sidr Honey</h2>
+            <h2 class="text-3xl font-bold text-gray-900">
+                Premium Sidr Honey : بیری کا شدہ
+            </h2>
             <p class="text-yellow-500 text-xl mt-2">★★★★★</p>
             <p class="text-gray-600 mt-4">
-                Rich, natural, and sustainably harvested honey straight from
-                Sidr trees.
+                Known as Beri Honey (بیری کا شدہ) or Sidr Tree Honey, it is
+                cherished for its deep, naturally sweet flavor, delicate aroma,
+                smooth texture, and natural quality. Our honey is kept close to
+                its natural state. It is never heated, blended, thickened, or
+                altered with artificial ingredients. Every jar of Organic Aprico
+                SDR Honey is hygienically packed in a premium glass jar. From
+                the Sidr forests of Karak to your table, each jar brings you the
+                authentic taste of Pakistani Sidr Honey, naturally harvested and
+                carefully handled.
             </p>
 
             <!-- Quantity Selector -->
@@ -150,6 +165,15 @@
         </div>
     </section>
 </template>
+
+<style scoped>
+:deep(.relative),
+:deep(.overflow-hidden),
+:deep(.flex.transition-transform),
+:deep(.flex-shrink-0) {
+    height: 100%;
+}
+</style>
 
 <script setup>
 import { ref } from "vue";
