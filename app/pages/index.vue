@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white font-sans">
+    <main class="bg-white font-sans">
         <!-- Navbar -->
         <Navbar />
 
@@ -24,6 +24,12 @@
         <!-- About Honey -->
         <AboutHoney />
 
+        <!-- Our Story -->
+        <OurStory />
+
+        <!-- How to Use -->
+        <HowToUse />
+
         <!-- FAQ -->
         <FAQ />
 
@@ -35,7 +41,7 @@
 
         <!-- Footer -->
         <Footer />
-    </div>
+    </main>
 </template>
 
 <script setup>
@@ -47,6 +53,8 @@ import WhyChooseUs from "~/components/WhyChooseUs.vue";
 import SocialProof from "~/components/SocialProof.vue";
 import Certificates from "~/components/Certificates.vue";
 import AboutHoney from "~/components/AboutHoney.vue";
+import OurStory from "~/components/OurStory.vue";
+import HowToUse from "~/components/HowToUse.vue";
 import FAQ from "~/components/FAQ.vue";
 import StickyPurchaseBar from "~/components/StickyPurchaseBar.vue";
 import BlogSection from "~/components/BlogSection.vue";

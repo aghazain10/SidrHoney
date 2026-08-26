@@ -11,6 +11,7 @@
                 <button
                     @click="closeCart"
                     class="text-gray-600 hover:text-red-500"
+                    aria-label="Close cart"
                 >
                     ✕
                 </button>
@@ -66,7 +67,7 @@
                     <NuxtLink
                         to="/checkout"
                         @click="closeCart"
-                        class="flex-1 bg-amber-500 text-white py-3 rounded-xl text-center hover:bg-amber-600 font-semibold"
+                        class="flex-1 bg-amber-700 text-white py-3 rounded-xl text-center hover:bg-amber-800 font-semibold"
                     >
                         Checkout
                     </NuxtLink>

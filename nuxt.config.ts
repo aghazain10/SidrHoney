@@ -23,6 +23,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            htmlAttrs: { lang: "en" },
             title: "Sidr Honey Pakistan – 100% Raw & Pure | Buy Online",
             meta: [
                 {

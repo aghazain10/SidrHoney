@@ -84,7 +84,7 @@
 
             <button
                 @click="goToShop"
-                class="mt-8 w-full bg-amber-500 hover:bg-amber-600 text-white py-4 rounded-xl font-semibold text-lg transition"
+                class="mt-8 w-full bg-amber-700 hover:bg-amber-800 text-white py-4 rounded-xl font-semibold text-lg transition"
             >
                 Continue Shopping
             </button>
@@ -99,7 +99,7 @@
             </p>
             <button
                 @click="goToShop"
-                class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl font-semibold text-lg transition"
+                class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 rounded-xl font-semibold text-lg transition"
             >
                 Continue Shopping
             </button>
@@ -115,10 +115,10 @@
 
         <!-- Checkout Form -->
         <form v-else @submit.prevent="submitOrder" class="space-y-5">
-            <!-- Your form fields here... (unchanged) -->
             <div>
-                <label class="block font-medium mb-1">Full Name</label>
+                <label for="checkout-name" class="block font-medium mb-1">Full Name</label>
                 <input
+                    id="checkout-name"
                     v-model="form.name"
                     type="text"
                     required
@@ -127,8 +127,9 @@
             </div>
 
             <div>
-                <label class="block font-medium mb-1">Email Address</label>
+                <label for="checkout-email" class="block font-medium mb-1">Email Address</label>
                 <input
+                    id="checkout-email"
                     v-model="form.email"
                     type="email"
                     required
@@ -137,8 +138,9 @@
             </div>
 
             <div>
-                <label class="block font-medium mb-1">Phone Number</label>
+                <label for="checkout-phone" class="block font-medium mb-1">Phone Number</label>
                 <input
+                    id="checkout-phone"
                     v-model="form.phone"
                     type="tel"
                     required
@@ -147,8 +149,9 @@
             </div>
 
             <div>
-                <label class="block font-medium mb-1">Delivery Address</label>
+                <label for="checkout-address" class="block font-medium mb-1">Delivery Address</label>
                 <textarea
+                    id="checkout-address"
                     v-model="form.address"
                     required
                     rows="3"
@@ -157,8 +160,9 @@
             </div>
 
             <div>
-                <label class="block font-medium mb-1">Payment Method</label>
+                <label for="checkout-payment" class="block font-medium mb-1">Payment Method</label>
                 <select
+                    id="checkout-payment"
                     v-model="form.payment_method"
                     required
                     class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500"
@@ -171,7 +175,7 @@
             <button
                 type="submit"
                 :disabled="loading"
-                class="w-full bg-amber-500 hover:bg-amber-600 text-white py-4 rounded-xl font-semibold text-lg transition disabled:opacity-70"
+                class="w-full bg-amber-700 hover:bg-amber-800 text-white py-4 rounded-xl font-semibold text-lg transition disabled:opacity-70"
             >
                 {{ loading ? "Processing Order..." : `Place Order` }}
             </button>

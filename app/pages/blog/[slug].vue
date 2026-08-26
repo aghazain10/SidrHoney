@@ -13,7 +13,7 @@
             <p class="text-gray-600 mb-6">
                 This blog post doesn't exist or may have been removed.
             </p>
-            <NuxtLink to="/" class="text-amber-600 font-medium hover:underline">
+            <NuxtLink to="/" class="text-amber-700 font-medium hover:underline">
                 &larr; Back to home
             </NuxtLink>
         </div>
@@ -22,7 +22,7 @@
         <article v-else>
             <NuxtLink
                 to="/#blog"
-                class="text-amber-600 font-medium hover:underline mb-6 inline-block"
+                class="text-amber-700 font-medium hover:underline mb-6 inline-block"
             >
                 &larr; Back to blog
             </NuxtLink>

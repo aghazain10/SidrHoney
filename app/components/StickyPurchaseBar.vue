@@ -17,7 +17,9 @@
 
             <!-- Size Selector -->
             <div class="flex-1">
+                <label for="size-select" class="sr-only">Select size</label>
                 <select
+                    id="size-select"
                     v-model="selectedSize"
                     class="w-full border border-gray-300 rounded-xl px-3 py-3 text-sm font-medium focus:outline-none focus:border-amber-500"
                 >
@@ -40,13 +42,14 @@
             <div class="flex gap-2">
                 <button
                     @click="addToCart"
-                    class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-3 rounded-xl font-semibold transition whitespace-nowrap"
+                    class="bg-amber-700 hover:bg-amber-800 text-white px-5 py-3 rounded-xl font-semibold transition whitespace-nowrap"
                 >
                     {{ selectedSize.price ? "Add" : "Inquire" }}
                 </button>
                 <button
                     @click="contactWhatsApp"
                     class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-xl font-semibold transition"
+                    aria-label="Order via WhatsApp"
                 >
                     📞
                 </button>

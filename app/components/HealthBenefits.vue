@@ -24,7 +24,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         A Natural Choice for Everyday Life
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">
@@ -49,7 +49,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         Naturally Contains Antioxidants
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">
@@ -76,7 +76,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         Natural Energy from Honey
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">
@@ -101,7 +101,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         A Simple Way to Add Sweetness
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">
@@ -126,7 +126,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         A Warm and Comforting Tradition
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">
@@ -154,7 +154,7 @@
                         format="webp"
                         loading="lazy"
                     />
-                    <h3 class="font-semibold text-lg text-amber-600">
+                    <h3 class="font-semibold text-lg text-amber-700">
                         A Touch of Natural Indulgence
                     </h3>
                     <p class="text-gray-600 text-sm text-center mt-2">

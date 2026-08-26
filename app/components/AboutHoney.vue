@@ -203,7 +203,7 @@
                 <!-- Call to Action -->
                 <button
                     @click="$router.push('#shop')"
-                    class="mt-8 bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
+                    class="mt-8 bg-amber-700 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-800"
                 >
                     Shop Now
                 </button>

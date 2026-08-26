@@ -26,7 +26,7 @@
                             href="https://instagram.com/sdrhoney"
                             target="_blank"
                             rel="noopener"
-                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-500 transition"
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-700 transition"
                             aria-label="Instagram"
                         >
                             <svg
@@ -48,7 +48,7 @@
                             href="https://facebook.com/sdrhoney"
                             target="_blank"
                             rel="noopener"
-                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-500 transition"
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-700 transition"
                             aria-label="Facebook"
                         >
                             <svg
@@ -66,7 +66,7 @@
                             href="https://wa.me/923311116915"
                             target="_blank"
                             rel="noopener"
-                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-500 transition"
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-amber-700 transition"
                             aria-label="WhatsApp"
                         >
                             <svg
@@ -89,35 +89,35 @@
                         <li>
                             <a
                                 href="#shop"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                                 >Shop Honey</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#whyus"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                                 >Why Us</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#reviews"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                                 >Reviews</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#about"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                                 >About Us</a
                             >
                         </li>
                         <li>
                             <a
                                 href="#faq"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                                 >FAQs</a
                             >
                         </li>
@@ -131,7 +131,7 @@
                         <li>
                             <a
                                 href="mailto:info@organicaprico.com"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                             >
                                 info@organicaprico.com
                             </a>
@@ -139,13 +139,13 @@
                         <li>
                             <a
                                 href="https://wa.me/923311116915"
-                                class="hover:text-amber-500 transition"
+                                class="hover:text-amber-600 transition"
                             >
                                 +92 331 1116915
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-amber-500 transition">
+                            <a href="#" class="hover:text-amber-600 transition">
                                 Shipping &amp; Returns Policy
                             </a>
                         </li>

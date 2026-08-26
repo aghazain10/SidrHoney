@@ -60,7 +60,7 @@
                         :class="[
                             'px-3 py-3 rounded-xl border text-center transition',
                             selectedOption.label === option.label
-                                ? 'bg-amber-500 border-amber-500 text-white shadow'
+                                ? 'bg-amber-700 border-amber-700 text-white shadow'
                                 : 'bg-white text-gray-700 border-gray-300 hover:bg-amber-50',
                         ]"
                     >
@@ -98,7 +98,7 @@
             <!-- Add to Cart -->
             <button
                 @click="handleAddToCart"
-                class="mt-6 bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
+                class="mt-6 bg-amber-700 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-800"
             >
                 {{
                     selectedOption.price
@@ -112,39 +112,46 @@
         <div
             v-if="showModal"
             class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="custom-order-title"
         >
             <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">
+                <h3 id="custom-order-title" class="text-xl font-bold text-gray-900 mb-4">
                     Custom Order Request
                 </h3>
                 <form @submit.prevent="submitCustomOrder">
-                    <label class="block mb-2 text-gray-700">Your Name</label>
+                    <label for="custom-name" class="block mb-2 text-gray-700">Your Name</label>
                     <input
+                        id="custom-name"
                         type="text"
                         v-model="customOrder.name"
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                         required
                     />
-                    <label class="block mb-2 text-gray-700">Your Email</label>
+                    <label for="custom-email" class="block mb-2 text-gray-700">Your Email</label>
                     <input
+                        id="custom-email"
                         type="email"
                         v-model="customOrder.email"
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                         required
                     />
 
-                    <label class="block mb-2 text-gray-700"
+                    <label for="custom-quantity" class="block mb-2 text-gray-700"
                         >Quantity (kg)</label
                     >
                     <input
+                        id="custom-quantity"
                         type="number"
                         v-model.number="customOrder.quantity"
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                         required
                     />
 
-                    <label class="block mb-2 text-gray-700">Message</label>
+                    <label for="custom-message" class="block mb-2 text-gray-700">Message</label>
                     <textarea
+                        id="custom-message"
                         v-model="customOrder.message"
                         class="w-full border rounded-lg px-4 py-2 mb-4"
                     ></textarea>
@@ -159,7 +166,7 @@
                         </button>
                         <button
                             type="submit"
-                            class="px-4 py-2 bg-amber-500 text-white rounded-lg"
+                            class="px-4 py-2 bg-amber-700 text-white rounded-lg"
                         >
                             Send Query
                         </button>

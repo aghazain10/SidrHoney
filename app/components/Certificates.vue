@@ -93,6 +93,7 @@
                 <button
                     @click="showModal = false"
                     class="absolute top-4 right-4 text-gray-700 hover:text-amber-600"
+                    aria-label="Close"
                 >
                     <svg
                         class="w-6 h-6"

@@ -23,13 +23,13 @@
         <div class="mt-6 flex justify-center gap-4">
             <a
                 href="#shop"
-                class="bg-amber-500 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-600"
+                class="bg-amber-700 text-white px-6 py-3 rounded-lg shadow hover:bg-amber-800"
             >
                 Shop Now
             </a>
             <a
                 href="https://wa.me/923311116915"
-                class="border border-amber-500 text-amber-500 px-6 py-3 rounded-lg hover:bg-amber-50"
+                class="border border-amber-700 text-amber-700 px-6 py-3 rounded-lg hover:bg-amber-50"
             >
                 WhatsApp Order
             </a>

@@ -49,7 +49,7 @@
                 </p>
                 <NuxtLink
                     :to="`/blog/${post.slug}`"
-                    class="mt-4 inline-block text-amber-600 font-medium hover:underline"
+                    class="mt-4 inline-block text-amber-700 font-medium hover:underline"
                 >
                     Read More
                 </NuxtLink>

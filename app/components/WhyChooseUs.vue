@@ -23,7 +23,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     100% Pure & Unprocessed
                 </h3>
                 <p class="mt-2 text-gray-600">
@@ -45,7 +45,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">Floral Character</h3>
+                <h3 class="font-bold text-lg text-amber-700">Floral Character</h3>
                 <p class="mt-2 text-gray-600">
                     Harvested from blooming Sidr blossoms, our honey offers rich sweetness,
                     delicate floral notes, and a distinctive natural character.
@@ -65,7 +65,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     Single Origin
                 </h3>
                 <p class="mt-2 text-gray-600">
@@ -87,7 +87,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     Ethical Harvesting
                 </h3>
                 <p class="mt-2 text-gray-600">
@@ -109,7 +109,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     Lab Tested for Purity
                 </h3>
                 <p class="mt-2 text-gray-600">
@@ -132,7 +132,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     Carefully Packed
                 </h3>
                 <p class="mt-2 text-gray-600">
@@ -154,7 +154,7 @@
                     format="webp"
                     loading="lazy"
                 />
-                <h3 class="font-bold text-lg text-amber-600">
+                <h3 class="font-bold text-lg text-amber-700">
                     Fast, Safe Delivery
                 </h3>
                 <p class="mt-2 text-gray-600">

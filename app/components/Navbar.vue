@@ -29,7 +29,11 @@
             <!-- Right Side: Cart + Hamburger -->
             <div class="flex items-center space-x-4">
                 <!-- Cart Icon -->
-                <div class="relative cursor-pointer" @click="openCart">
+                <button
+                    class="relative cursor-pointer"
+                    aria-label="Open cart"
+                    @click="openCart"
+                >
                     <svg
                         class="w-7 h-7 text-gray-700"
                         fill="none"
@@ -46,15 +50,17 @@
                     <span
                         v-if="cart.itemCount()"
                         class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2"
+                        aria-hidden="true"
                     >
                         {{ cart.itemCount() }}
                     </span>
-                </div>
+                </button>
 
                 <!-- Mobile Hamburger -->
                 <button
                     @click="showMenu = true"
                     class="md:hidden text-gray-700 focus:outline-none"
+                    aria-label="Open menu"
                 >
                     <svg
                         class="w-8 h-8"
@@ -83,6 +89,7 @@
                 <button
                     @click="showMenu = false"
                     class="absolute top-4 right-4 text-gray-700 hover:text-amber-600"
+                    aria-label="Close menu"
                 >
                     <svg
                         class="w-6 h-6"
