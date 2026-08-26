@@ -36,6 +36,10 @@
                     :src="post.image_url || '/blog.jpg'"
                     :alt="post.title"
                     class="w-full h-40 object-cover rounded-md mb-4"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="160"
                 />
                 <h3 class="font-semibold text-lg text-gray-900">
                     {{ post.title }}

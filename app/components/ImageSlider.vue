@@ -14,13 +14,13 @@
                     :style="{ width: `${100 / visibleCount}%` }"
                 >
                     <slot :image="image" :index="index">
-                        <!-- default rendering if no slot is provided -->
                         <NuxtImg
                             :src="image.src"
                             :alt="image.alt || ''"
                             :class="imageClass"
                             :width="imgWidth"
                             :height="imgHeight"
+                            :sizes="sizes"
                             format="webp"
                             :loading="index === 0 ? 'eager' : 'lazy'"
                             :fetchpriority="index === 0 ? 'high' : undefined"
@@ -62,6 +62,7 @@ const props = defineProps({
     },
     imgWidth: { type: [String, Number], default: 896 },
     imgHeight: { type: [String, Number], default: 672 },
+    sizes: { type: String, default: "100vw" },
 });
 
 const currentIndex = ref(0);

@@ -67,7 +67,7 @@
                             class="w-full h-56 object-contain rounded-md"
                             width="600"
                             height="400"
-                            sizes="(max-width: 768px) 100vw, 400px"
+                            sizes="(max-width: 768px) 90vw, 320px"
                             format="webp"
                             loading="lazy"
                         />

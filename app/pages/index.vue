@@ -51,4 +51,15 @@ import FAQ from "~/components/FAQ.vue";
 import StickyPurchaseBar from "~/components/StickyPurchaseBar.vue";
 import BlogSection from "~/components/BlogSection.vue";
 import Footer from "~/components/Footer.vue";
+
+useHead({
+    title: "Sidr Honey Pakistan – 100% Raw & Pure | Buy Online",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Buy 100% pure raw Sidr (Beri) Honey from the wild forests of Karak, Pakistan. Never heated, lab-tested, ISO & Halal certified. Order via WhatsApp today.",
+        },
+    ],
+});
 </script>

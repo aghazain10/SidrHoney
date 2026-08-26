@@ -32,6 +32,10 @@
                 :src="post.image_url"
                 :alt="post.title"
                 class="w-full h-72 object-cover rounded-lg mb-6"
+                loading="lazy"
+                decoding="async"
+                width="768"
+                height="288"
             />
 
             <h1 class="text-3xl font-bold text-gray-900 mb-2">
@@ -69,5 +73,14 @@ const formattedDate = computed(() => {
 
 useHead(() => ({
     title: post.value ? `${post.value.title} — Sidr Honey` : "Blog",
+    meta: [
+        {
+            name: "description",
+            content: post.value?.excerpt || "Blog posts about Sidr Honey, health benefits, and more.",
+        },
+        { property: "og:title", content: post.value ? `${post.value.title} — Sidr Honey` : "Blog" },
+        { property: "og:description", content: post.value?.excerpt || "" },
+        { property: "og:type", content: "article" },
+    ],
 }));
 </script>

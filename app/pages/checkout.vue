@@ -182,7 +182,6 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useCart } from "~/composables/useCart";
-import axios from "axios";
 
 const cart = useCart();
 
@@ -202,6 +201,13 @@ const config = useRuntimeConfig();
 
 const isCartEmpty = computed(() => cart.cartItems.value.length === 0);
 
+useHead({
+    title: "Checkout – Sidr Honey",
+    meta: [
+        { name: "robots", content: "noindex, nofollow" },
+    ],
+});
+
 async function submitOrder() {
     errorMessage.value = "";
     loading.value = true;
@@ -217,32 +223,42 @@ async function submitOrder() {
             })),
         };
 
-        const res = await axios.post(
+        const res = await fetch(
             `${config.public.apiBase}/api/orders`,
-            payload,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(payload),
+            },
         );
 
-        if (res.data.success) {
-            orderData.value = res.data.order;
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+            orderData.value = data.order;
             orderSuccess.value = true;
             cart.clearCart();
+        } else {
+            if (data.errors) {
+                errorMessage.value =
+                    Object.values(data.errors).flat()[0] ||
+                    "Please check your information.";
+            } else {
+                errorMessage.value =
+                    data.message || "Something went wrong. Please try again.";
+            }
         }
     } catch (error) {
-        const response = error.response?.data;
-        if (response?.errors) {
-            errorMessage.value =
-                Object.values(response.errors).flat()[0] ||
-                "Please check your information.";
-        } else {
-            errorMessage.value =
-                response?.message || "Something went wrong. Please try again.";
-        }
+        errorMessage.value = "Something went wrong. Please try again.";
     } finally {
         loading.value = false;
     }
 }
 
 function goToShop() {
-    window.location.href = "/"; // Change this to your shop page route if needed
+    navigateTo("/");
 }
 </script>

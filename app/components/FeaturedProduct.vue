@@ -24,7 +24,8 @@
                 :desktop-visible="1"
                 :mobile-visible="1"
                 :img-width="1056"
-                :img-height="1500"
+                :img-height="1300"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 480px"
                 image-class="w-full h-full object-cover rounded-lg shadow-md"
                 class="h-full"
             />

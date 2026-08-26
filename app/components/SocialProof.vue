@@ -10,9 +10,7 @@
         <!-- Overall Rating -->
         <div class="mt-6 text-center">
             <p class="text-yellow-500 text-2xl">★★★★★</p>
-            <p class="text-gray-700 mt-2">
-                Average Rating: 4.9/5 (500+ reviews)
-            </p>
+            <p class="text-gray-700 mt-2">Average Rating: 4.9/5</p>
         </div>
 
         <!-- Reviews Grid -->
