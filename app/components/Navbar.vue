@@ -4,26 +4,26 @@
             class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
         >
             <!-- Logo -->
-            <h1 class="text-xl font-bold text-amber-600">
+            <NuxtLink to="/" class="text-xl font-bold text-amber-600">
                 <span class="font-aspire">Sdr</span>
                 <span> Honey</span>
-            </h1>
+            </NuxtLink>
 
             <!-- Desktop Menu -->
             <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
                 <li>
-                    <a href="#shop" class="hover:text-amber-600">Shop Honey</a>
+                    <NuxtLink to="/#shop" class="hover:text-amber-600">Shop Honey</NuxtLink>
                 </li>
                 <li>
-                    <a href="#whyus" class="hover:text-amber-600">Why Us</a>
+                    <NuxtLink to="/#whyus" class="hover:text-amber-600">Why Us</NuxtLink>
                 </li>
                 <li>
-                    <a href="#reviews" class="hover:text-amber-600">Reviews</a>
+                    <NuxtLink to="/#reviews" class="hover:text-amber-600">Reviews</NuxtLink>
                 </li>
                 <li>
-                    <a href="#about" class="hover:text-amber-600">About Us</a>
+                    <NuxtLink to="/#about" class="hover:text-amber-600">About Us</NuxtLink>
                 </li>
-                <li><a href="#faq" class="hover:text-amber-600">FAQs</a></li>
+                <li><NuxtLink to="/#faq" class="hover:text-amber-600">FAQs</NuxtLink></li>
                 <li>
                     <NuxtLink to="/blog" class="hover:text-amber-600">Blog</NuxtLink>
                 </li>
@@ -111,43 +111,43 @@
 
                 <ul class="space-y-6 text-gray-700 font-medium mt-10">
                     <li>
-                        <a
-                            href="#shop"
+                        <NuxtLink
+                            to="/#shop"
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
-                            >Shop Honey</a
+                            >Shop Honey</NuxtLink
                         >
                     </li>
                     <li>
-                        <a
-                            href="#whyus"
+                        <NuxtLink
+                            to="/#whyus"
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
-                            >Why Us</a
+                            >Why Us</NuxtLink
                         >
                     </li>
                     <li>
-                        <a
-                            href="#reviews"
+                        <NuxtLink
+                            to="/#reviews"
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
-                            >Reviews</a
+                            >Reviews</NuxtLink
                         >
                     </li>
                     <li>
-                        <a
-                            href="#about"
+                        <NuxtLink
+                            to="/#about"
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
-                            >About Us</a
+                            >About Us</NuxtLink
                         >
                     </li>
                     <li>
-                        <a
-                            href="#faq"
+                        <NuxtLink
+                            to="/#faq"
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
-                            >FAQs</a
+                            >FAQs</NuxtLink
                         >
                     </li>
                     <li>
