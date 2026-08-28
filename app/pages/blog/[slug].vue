@@ -1,5 +1,8 @@
 <template>
-    <div class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <div class="bg-white font-sans">
+        <Navbar />
+
+        <div class="max-w-3xl mx-auto px-6 pt-24 pb-16">
         <!-- Loading -->
         <div v-if="pending" class="text-center text-gray-500">
             Loading post...
@@ -83,9 +86,15 @@
             </section>
         </article>
     </div>
+
+    <Footer />
+</div>
 </template>
 
 <script setup>
+import Navbar from "~/components/Navbar.vue";
+import Footer from "~/components/Footer.vue";
+
 const route = useRoute();
 const config = useRuntimeConfig();
 const siteUrl = "https://sdrhoney.com";

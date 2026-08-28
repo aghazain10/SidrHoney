@@ -1,5 +1,8 @@
 <template>
-    <div class="bg-gray-50 min-h-screen pt-24 pb-16">
+    <div class="bg-white font-sans">
+        <Navbar />
+
+        <div class="bg-gray-50 pt-24 pb-16">
         <div class="max-w-6xl mx-auto px-6">
             <!-- Page header -->
             <header class="text-center mb-12">
@@ -116,9 +119,15 @@
             </nav>
         </div>
     </div>
+
+    <Footer />
+</div>
 </template>
 
 <script setup>
+import Navbar from "~/components/Navbar.vue";
+import Footer from "~/components/Footer.vue";
+
 const route = useRoute();
 const router = useRouter();
 const config = useRuntimeConfig();
