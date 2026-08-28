@@ -53,9 +53,19 @@
                 >
                     Read More
                 </NuxtLink>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <!-- View all -->
+            <div class="mt-10 text-center">
+                <NuxtLink
+                    to="/blog"
+                    class="inline-block text-amber-700 font-medium hover:underline"
+                >
+                    Read all articles &rarr;
+                </NuxtLink>
+            </div>
+        </section>
 </template>
 
 <script setup>

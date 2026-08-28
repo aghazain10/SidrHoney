@@ -24,6 +24,9 @@
                     <a href="#about" class="hover:text-amber-600">About Us</a>
                 </li>
                 <li><a href="#faq" class="hover:text-amber-600">FAQs</a></li>
+                <li>
+                    <NuxtLink to="/blog" class="hover:text-amber-600">Blog</NuxtLink>
+                </li>
             </ul>
 
             <!-- Right Side: Cart + Hamburger -->
@@ -145,6 +148,14 @@
                             @click="showMenu = false"
                             class="block hover:text-amber-600"
                             >FAQs</a
+                        >
+                    </li>
+                    <li>
+                        <NuxtLink
+                            to="/blog"
+                            @click="showMenu = false"
+                            class="block hover:text-amber-600"
+                            >Blog</NuxtLink
                         >
                     </li>
                 </ul>

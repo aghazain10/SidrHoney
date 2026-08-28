@@ -20,6 +20,7 @@ export default defineEventHandler(async (event) => {
 
     const staticPages = [
         { loc: SITE, priority: "1.0", changefreq: "weekly" },
+        { loc: `${SITE}/blog`, priority: "0.8", changefreq: "weekly" },
     ];
 
     let blogUrls: string[] = [];
