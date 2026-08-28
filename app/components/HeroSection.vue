@@ -16,7 +16,7 @@
         </h1>
         <p class="text-lg text-gray-600 mt-2">
             A Rare Expression of Nature.<br />
-            Pakistan's premium raw, single-origin Sidr honey, harvested from the
+            Pakistan's premium raw, single-origin Sidr (Beri / بیری کا شہد) honey, harvested from the
             wild Sidr forests of Karak.<br />
             Never heated, never blended, never artificially processed.
         </p>

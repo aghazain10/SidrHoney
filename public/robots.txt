@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /checkout
 
 Sitemap: https://sdrhoney.com/sitemap.xml

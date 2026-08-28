@@ -158,7 +158,7 @@
                 class="pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500"
             >
                 <p>© 2026 Sdr Honey by Organic Aprico. All rights reserved.</p>
-                <p>Handcrafted with care in Gilgit Baltistan, Pakistan.</p>
+                <p>Handcrafted with care in the wild forests of Karak, Pakistan.</p>
             </div>
         </div>
     </footer>

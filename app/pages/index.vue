@@ -61,12 +61,12 @@ import BlogSection from "~/components/BlogSection.vue";
 import Footer from "~/components/Footer.vue";
 
 useHead({
-    title: "Sidr Honey Pakistan – 100% Raw & Pure | Buy Online",
+    title: "Buy Pure Sidr (Beri) Honey Online in Pakistan | Sdr Honey — Wild Forests of Karak",
     meta: [
         {
             name: "description",
             content:
-                "Buy 100% pure raw Sidr (Beri) Honey from the wild forests of Karak, Pakistan. Never heated, lab-tested, ISO & Halal certified. Order via WhatsApp today.",
+                "Buy 100% pure raw Sidr (Beri) Honey from the wild forests of Karak, Pakistan. Never heated, lab-tested, ISO & Halal certified. Order across Pakistan via WhatsApp today.",
         },
     ],
 });

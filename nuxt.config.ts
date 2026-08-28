@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             htmlAttrs: { lang: "en" },
-            title: "Sidr Honey Pakistan – 100% Raw & Pure | Buy Online",
+                title: "Buy Pure Sidr (Beri) Honey Online in Pakistan | Sdr Honey — Wild Forests of Karak",
             meta: [
                 {
                     name: "google-site-verification",
