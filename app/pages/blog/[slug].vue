@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-3xl mx-auto px-6 py-16">
+    <div class="max-w-3xl mx-auto px-6 pt-24 pb-16">
         <!-- Loading -->
         <div v-if="pending" class="text-center text-gray-500">
             Loading post...
