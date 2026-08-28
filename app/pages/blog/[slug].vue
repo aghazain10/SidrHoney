@@ -66,7 +66,7 @@
                         <img
                             :src="item.image_url || '/blog.jpg'"
                             :alt="item.title"
-                            class="w-full h-32 object-cover rounded-md mb-3"
+                            class="w-full aspect-[16/7] object-cover rounded-md mb-3"
                             loading="lazy"
                             decoding="async"
                             width="400"

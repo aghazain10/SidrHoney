@@ -35,7 +35,7 @@
                 <img
                     :src="post.image_url || '/blog.jpg'"
                     :alt="post.title"
-                    class="w-full h-40 object-cover rounded-md mb-4"
+                    class="w-full aspect-[16/7] object-cover rounded-md mb-4"
                     loading="lazy"
                     decoding="async"
                     width="400"

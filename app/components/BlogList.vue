@@ -43,7 +43,7 @@
                     <img
                         :src="post.image_url || '/blog.jpg'"
                         :alt="post.title"
-                        class="w-full h-44 object-cover rounded-t-lg"
+                        class="w-full aspect-[16/7] object-cover rounded-t-lg"
                         loading="lazy"
                         decoding="async"
                         width="400"
