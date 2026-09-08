@@ -9,39 +9,57 @@
 
         <!-- Badges Grid -->
         <div
-            class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6"
+            class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6"
         >
             <NuxtImg
-                src="/gmp.png"
+                src="/GMP.png"
                 alt="GMP Certified"
-                class="w-24 h-24 mx-auto"
+                class="w-24 h-24 mx-auto object-contain"
                 width="96"
                 height="96"
                 format="webp"
                 loading="lazy"
             />
             <NuxtImg
-                src="/iso.png"
-                alt="ISO Certified"
-                class="w-24 h-24 mx-auto"
-                width="96"
-                height="96"
-                format="webp"
-                loading="lazy"
-            />
-            <NuxtImg
-                src="/haccp.png"
+                src="/HACCP.png"
                 alt="HACCP Certified"
-                class="w-24 h-24 mx-auto"
+                class="w-24 h-24 mx-auto object-contain"
                 width="96"
                 height="96"
                 format="webp"
                 loading="lazy"
             />
             <NuxtImg
-                src="/halal.png"
-                alt="Halal Certified"
-                class="w-24 h-24 mx-auto"
+                src="/Halal_100.png"
+                alt="100% Halal Certified"
+                class="w-24 h-24 mx-auto object-contain"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
+            />
+            <NuxtImg
+                src="/ISO_9001.png"
+                alt="ISO 9001 Certified"
+                class="w-24 h-24 mx-auto object-contain"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
+            />
+            <NuxtImg
+                src="/ISO_22000.png"
+                alt="ISO 22000 Certified"
+                class="w-24 h-24 mx-auto object-contain"
+                width="96"
+                height="96"
+                format="webp"
+                loading="lazy"
+            />
+            <NuxtImg
+                src="/pcsir.png"
+                alt="PCSIR Certified"
+                class="w-24 h-24 mx-auto object-contain"
                 width="96"
                 height="96"
                 format="webp"
