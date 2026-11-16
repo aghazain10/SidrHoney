@@ -2,6 +2,7 @@
     <div class="min-h-screen bg-ink text-cream">
         <ProductSchema />
         <NuxtPage />
+        <CartDrawer />
 
         <Transition name="fade">
             <div
@@ -15,6 +16,8 @@
 </template>
 
 <script setup>
+import CartDrawer from "~/components/CartDrawer.vue";
+
 const { message } = useToast();
 </script>
 

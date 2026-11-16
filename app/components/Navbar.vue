@@ -129,23 +129,20 @@
             </div>
         </Transition>
 
-        <!-- Cart Drawer -->
-        <CartDrawer ref="cartDrawer" />
     </nav>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { useCartStore } from "~/stores/cart";
-import CartDrawer from "~/components/CartDrawer.vue";
 
 const showMenu = ref(false);
 const scrolled = ref(false);
 const cart = useCartStore();
-const cartDrawer = ref(null);
+const { open: openCartDrawer } = useCartDrawer();
 
 const tickerItems = [
-    "Free delivery over Rs. 5,000",
+    "Flat Rs 250 delivery nationwide",
     "100% Raw & Unheated",
     "ISO 9001 · ISO 22000 · GMP · HACCP · Halal",
     "14-day easy returns",
@@ -172,9 +169,7 @@ onMounted(() => {
 onUnmounted(() => window.removeEventListener("scroll", onScroll));
 
 function openCart() {
-    if (cartDrawer.value && typeof cartDrawer.value.openCart === "function") {
-        cartDrawer.value.openCart();
-    }
+    openCartDrawer();
 }
 </script>
 

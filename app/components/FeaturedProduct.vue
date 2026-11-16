@@ -94,7 +94,7 @@
                             <template v-else>Custom</template>
                         </p>
                         <p class="text-xs text-muted pb-1.5 leading-tight">
-                            <template v-if="selectedOption.price">Incl. all taxes<br />Free delivery</template>
+                            <template v-if="selectedOption.price">Incl. all taxes<br />Rs 250 delivery</template>
                             <template v-else>Tailored bulk pricing<br />on request</template>
                         </p>
                     </div>
@@ -200,7 +200,7 @@ const options = [
 ];
 
 const assurances = [
-    { label: "Free Delivery Over Rs. 5,000", icon: '<path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17.5" cy="17" r="1.6"/>' },
+    { label: "Fast Nationwide Delivery", icon: '<path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17.5" cy="17" r="1.6"/>' },
     { label: "14-Day Easy Returns", icon: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>' },
     { label: "Sealed & Tamper-Proof", icon: '<path d="M12 22c5-3.5 7-8 7-12l-7-4-7 4c0 4 2 8.5 7 12z"/><path d="M9.5 12.5l2 2 3.5-4"/>' },
 ];
