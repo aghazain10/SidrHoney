@@ -1,184 +1,73 @@
 <template>
-    <section id="benefits" class="bg-gray-50 py-16">
-        <h2 class="text-3xl font-bold text-center text-gray-900">
-            Simple Reasons to Enjoy Sidr Honey
-        </h2>
-        <p class="mt-2 text-center text-gray-600">
-            Nature's gift for wellness and vitality
-        </p>
+    <section id="benefits" class="relative bg-ink py-16 md:py-24 honeycomb-bg overflow-hidden">
+        <div class="pointer-events-none absolute -left-40 top-24 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.09), transparent 65%);"></div>
+        <div class="pointer-events-none absolute -right-40 bottom-24 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.09), transparent 65%);"></div>
 
-        <div
-            class="mt-12 grid grid-cols-2 gap-6 justify-items-center max-w-md mx-auto md:max-w-none md:grid-cols-4 md:max-w-5xl"
-        >
-            <!-- Benefit 1 -->
-            <div class="honeycomb">
-                <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
-                >
-                    <NuxtImg
-                        src="/immune.png"
-                        alt="A Natural Choice for Everyday Life"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        A Natural Choice for Everyday Life
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        Raw honey is a simple way to add a natural ingredient to
-                        your daily routine. With minimal processing, it retains
-                        qualities that make honey naturally valued food.
-                    </p>
-                </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <span class="kicker">The Sidr Difference</span>
+                <h2 class="mt-4 font-display font-bold text-cream text-3xl sm:text-5xl tracking-tight">
+                    Simple Reasons to <span class="text-gold-gradient italic">Love It</span>
+                </h2>
+                <p class="mt-3 text-muted max-w-lg mx-auto">Nature's oldest sweetener — revered for centuries, backed by modern purity standards.</p>
             </div>
 
-            <!-- Benefit 2 -->
-            <div class="honeycomb">
+            <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
+                    v-for="(b, i) in benefits"
+                    :key="b.title"
+                    class="card-dark card-dark-hover reveal p-6 sm:p-7 flex items-start gap-5"
+                    :style="{ '--reveal-delay': `${i * 90}ms` }"
                 >
-                    <NuxtImg
-                        src="/antibacterial.png"
-                        alt="Naturally Contains Antioxidants"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        Naturally Contains Antioxidants
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        Honey contains naturally occurring antioxidant
-                        compounds, including phenolic compounds. These are part
-                        of the natural composition of honey.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Benefit 3 (mobile: centered single card, desktop: normal) -->
-            <div
-                class="honeycomb col-span-2 justify-self-center md:col-span-1 md:justify-self-auto"
-            >
-                <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
-                >
-                    <NuxtImg
-                        src="/athlete.png"
-                        alt="Natural Energy from Honey"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        Natural Energy from Honey
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        Wild Forest Sidr Honey from Karak, Pakistan contains
-                        naturally occurring sugars that provide carbohydrates,
-                        which the body uses as a source of energy.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Benefit 4 -->
-            <div class="honeycomb">
-                <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
-                >
-                    <NuxtImg
-                        src="/digestion.png"
-                        alt="A Simple Way to Add Sweetness"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        A Simple Way to Add Sweetness
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        Sidr Honey can be enjoyed in many everyday ways. Add it
-                        to a warm drink, spread it on toast, or drizzle a little
-                        over your favourite foods.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Benefit 5 (desktop: starts at col 2 for centering) -->
-            <div class="honeycomb md:col-start-2">
-                <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
-                >
-                    <NuxtImg
-                        src="/sleep.png"
-                        alt="A Warm and Comforting Tradition"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        A Warm and Comforting Tradition
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        A spoonful of Sidr Honey in a warm drink can become a
-                        pleasant part of your daily routine. It is a simple
-                        tradition that has been enjoyed in homes for
-                        generations.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Benefit 6 (mobile: centered single card, desktop: col 3) -->
-            <div
-                class="honeycomb col-span-2 justify-self-center md:col-span-1 md:col-start-3"
-            >
-                <div
-                    class="hex bg-white shadow-lg p-6 flex flex-col items-center"
-                >
-                    <NuxtImg
-                        src="/immune.png"
-                        alt="A Touch of Natural Indulgence"
-                        class="w-12 h-12 mb-3"
-                        width="48"
-                        height="48"
-                        format="webp"
-                        loading="lazy"
-                    />
-                    <h3 class="font-semibold text-lg text-amber-700">
-                        A Touch of Natural Indulgence
-                    </h3>
-                    <p class="text-gray-600 text-sm text-center mt-2">
-                        Pure Sidr Honey offers a naturally sweet and enjoyable
-                        experience without additives. Its rich taste makes it a
-                        simple way to bring something special to your everyday
-                        meals.
-                    </p>
+                    <!-- Honeycomb icon -->
+                    <div class="shrink-0 w-16 h-[4.4rem] sm:w-[4.5rem] sm:h-20 hex-clip flex items-center justify-center"
+                         style="background: linear-gradient(160deg, #F6D87A, #D4A017 55%, #8A5A00);">
+                        <div class="w-[calc(100%-3px)] h-[calc(100%-3px)] hex-clip bg-[#1a1611] flex items-center justify-center">
+                            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" v-html="b.icon"></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-extrabold uppercase tracking-[0.28em] text-gold-600">0{{ i + 1 }}</p>
+                        <h3 class="mt-1 font-display font-bold text-lg text-cream leading-snug">{{ b.title }}</h3>
+                        <p class="mt-2 text-sm text-muted leading-relaxed">{{ b.text }}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </template>
 
-<style scoped>
-.honeycomb {
-    width: 100%;
-    max-width: 240px;
-}
-.hex {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-</style>
+<script setup>
+const benefits = [
+    {
+        title: "A Natural Choice for Everyday Life",
+        text: "Raw honey is a simple way to add a natural ingredient to your daily routine — minimal processing retains the qualities that make honey naturally valued.",
+        icon: '<path d="M11 20A7 7 0 0 1 4 13c0-4 3-8 8-9 4.5 3.5 6 8 4 12-1.5 3-3.5 4-5 4z"/><path d="M11 20c0-5 2-9 6-12"/>',
+    },
+    {
+        title: "Naturally Contains Antioxidants",
+        text: "Honey contains naturally occurring antioxidant compounds, including phenolic compounds — part of honey's natural composition.",
+        icon: '<circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
+    },
+    {
+        title: "Natural Energy from Honey",
+        text: "Wild Forest Sidr Honey contains naturally occurring sugars that provide carbohydrates — the body's preferred source of energy.",
+        icon: '<path d="M13 2L4.5 13.5H11L9.5 22 18 10.5h-6.5L13 2z"/>',
+    },
+    {
+        title: "A Simple Way to Add Sweetness",
+        text: "Drizzle over toast, stir into a warm drink, or add to your favourite foods — Sidr honey elevates the everyday.",
+        icon: '<path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 5 0"/>',
+    },
+    {
+        title: "A Warm & Comforting Tradition",
+        text: "A spoonful of Sidr honey in a warm drink is a simple ritual enjoyed in homes for generations.",
+        icon: '<path d="M4 10h13v5a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5v-5z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2"/><path d="M8 6c0-1 .8-1 .8-2M12 6c0-1 .8-1 .8-2"/>',
+    },
+    {
+        title: "A Touch of Natural Indulgence",
+        text: "Rich, unblended and free of additives — pure Sidr honey makes even ordinary meals feel like an occasion.",
+        icon: '<path d="M20 12l-8 8-9-9V4h7l10 8z"/><circle cx="7.5" cy="7.5" r="1.2"/>',
+    },
+];
+</script>

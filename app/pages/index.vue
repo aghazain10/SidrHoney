@@ -1,9 +1,9 @@
 <template>
-    <main class="bg-white font-sans">
+    <main class="bg-ink font-sans text-cream antialiased">
         <!-- Navbar -->
         <Navbar />
 
-        <!-- Hero Section -->
+        <!-- Hero -->
         <HeroSection />
 
         <!-- Featured Product -->
@@ -33,11 +33,11 @@
         <!-- FAQ -->
         <FAQ />
 
+        <!-- Blog -->
+        <BlogSection />
+
         <!-- Sticky Purchase Bar (Mobile) -->
         <StickyPurchaseBar />
-
-        <!-- Blog Section -->
-        <BlogSection />
 
         <!-- Footer -->
         <Footer />
@@ -59,6 +59,8 @@ import FAQ from "~/components/FAQ.vue";
 import StickyPurchaseBar from "~/components/StickyPurchaseBar.vue";
 import BlogSection from "~/components/BlogSection.vue";
 import Footer from "~/components/Footer.vue";
+
+useReveal();
 
 useHead({
     title: "Buy Pure Sidr (Beri) Honey Online in Pakistan | Sdr Honey — Wild Forests of Karak",

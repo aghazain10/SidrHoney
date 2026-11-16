@@ -1,21 +1,30 @@
 <template>
-    <section id="faq" class="bg-white py-12">
-        <h2 class="text-2xl font-bold text-center text-gray-900">
-            Frequently Asked Questions
-        </h2>
-        <div class="mt-8 max-w-xl mx-auto space-y-4">
-            <details
-                v-for="(faq, index) in faqs"
-                :key="index"
-                class="bg-gray-50 p-4 rounded-lg shadow"
-            >
-                <summary class="font-semibold cursor-pointer">
-                    {{ faq.question }}
-                </summary>
-                <p class="mt-2 text-gray-600">
-                    {{ faq.answer }}
-                </p>
-            </details>
+    <section id="faq" class="relative bg-onyx py-16 md:py-24 border-t border-line">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center reveal">
+                <span class="kicker">Before You Ask</span>
+                <h2 class="mt-4 font-display font-bold text-cream text-3xl sm:text-5xl tracking-tight">
+                    Frequently Asked <span class="text-gold-gradient italic">Questions</span>
+                </h2>
+            </div>
+
+            <div class="reveal mt-12 space-y-3">
+                <details
+                    v-for="(faq, index) in faqs"
+                    :key="index"
+                    class="faq-item group rounded-2xl border border-line bg-white/[0.02] open:border-gold-500/30 open:bg-gold-500/[0.03] transition-colors duration-300"
+                >
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-cream/90 text-sm sm:text-base select-none [&::-webkit-details-marker]:hidden">
+                        <span>{{ faq.question }}</span>
+                        <span class="shrink-0 flex w-8 h-8 items-center justify-center rounded-full border border-gold-500/30 text-gold-400 transition-transform duration-300 group-open:rotate-45">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-5 -mt-1">
+                        <p class="text-sm text-muted leading-relaxed border-t border-line pt-4">{{ faq.answer }}</p>
+                    </div>
+                </details>
+            </div>
         </div>
     </section>
 </template>

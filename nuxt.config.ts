@@ -42,7 +42,7 @@ export default defineNuxtConfig({
                         "Buy 100% pure raw Sidr (Beri) Honey from the wild forests of Karak, Pakistan. Never heated, lab-tested, ISO & Halal certified. Order via WhatsApp today.",
                 },
                 { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
-                { name: "theme-color", content: "#f59e0b" },
+                { name: "theme-color", content: "#0b0908" },
                 { property: "og:title", content: "Sidr Honey Pakistan – 100% Raw & Pure | Buy Online" },
                 {
                     property: "og:description",
@@ -73,6 +73,12 @@ export default defineNuxtConfig({
             link: [
                 { rel: "icon", type: "image/png", href: "/favicon.png" },
                 { rel: "canonical", href: "https://sdrhoney.com" },
+                { rel: "preconnect", href: "https://fonts.googleapis.com" },
+                { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+                {
+                    rel: "stylesheet",
+                    href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap",
+                },
                 {
                     rel: "preload",
                     href: "/fonts/LTAspirerNeue-Heavy.woff2",

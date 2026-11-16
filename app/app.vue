@@ -1,12 +1,12 @@
 <template>
-    <div class="min-h-screen bg-white text-neutral-900">
+    <div class="min-h-screen bg-ink text-cream">
         <ProductSchema />
         <NuxtPage />
 
         <Transition name="fade">
             <div
                 v-if="message"
-                class="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-lg shadow-lg z-[60]"
+                class="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 bg-gold-500 text-[#241300] text-sm font-extrabold px-6 py-3 rounded-full shadow-gold-sm z-[60]"
             >
                 {{ message }}
             </div>
@@ -21,10 +21,11 @@ const { message } = useToast();
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+    transform: translate(-50%, 12px);
 }
 </style>

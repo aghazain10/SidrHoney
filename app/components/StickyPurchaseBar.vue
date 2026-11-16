@@ -1,13 +1,13 @@
 <template>
     <div
         v-if="!isCartOpen"
-        class="fixed bottom-0 left-0 right-0 bg-white shadow-2xl p-4 border-t md:hidden z-40 transition-all duration-300"
+        class="fixed bottom-0 left-0 right-0 bg-[#12100b]/95 backdrop-blur-xl border-t border-gold-500/20 p-3 z-40 md:hidden"
     >
         <div class="flex items-center justify-between max-w-2xl mx-auto gap-3">
             <!-- Price -->
             <div class="min-w-[100px]">
-                <span class="text-xs text-gray-500">Price</span>
-                <div class="text-xl font-bold text-gray-900">
+                <span class="text-[9px] uppercase tracking-[0.2em] text-muted font-bold">Price</span>
+                <div class="text-lg font-extrabold text-gold-300">
                     <template v-if="selectedSize.price">
                         Rs. {{ selectedSize.price.toLocaleString() }}
                     </template>
@@ -21,7 +21,7 @@
                 <select
                     id="size-select"
                     v-model="selectedSize"
-                    class="w-full border border-gray-300 rounded-xl px-3 py-3 text-sm font-medium focus:outline-none focus:border-amber-500"
+                    class="w-full border border-gold-500/25 rounded-xl px-3 py-3 text-sm font-semibold bg-white/[0.04] text-cream focus:outline-none focus:border-gold-500/60"
                 >
                     <option
                         v-for="option in sizeOptions"
@@ -42,7 +42,7 @@
             <div class="flex gap-2">
                 <button
                     @click="addToCart"
-                    class="bg-amber-700 hover:bg-amber-800 text-white px-5 py-3 rounded-xl font-semibold transition whitespace-nowrap"
+                    class="bg-gradient-to-br from-gold-300 via-gold-500 to-gold-700 hover:from-gold-200 hover:to-gold-600 text-[#241300] px-5 py-3 rounded-xl font-extrabold transition whitespace-nowrap shadow-gold-sm"
                 >
                     {{ selectedSize.price ? "Add" : "Inquire" }}
                 </button>

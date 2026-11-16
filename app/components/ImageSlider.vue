@@ -33,7 +33,7 @@
         <button
             v-if="images.length > visibleCount"
             @click="prev"
-            class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow text-gray-700 z-10"
+            class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/55 backdrop-blur-md hover:bg-gold-500 hover:text-[#241300] border border-gold-500/30 rounded-full w-10 h-10 flex items-center justify-center shadow-card-dark text-gold-300 z-10 transition-all duration-300"
             aria-label="Previous image"
         >
             ‹
@@ -41,7 +41,7 @@
         <button
             v-if="images.length > visibleCount"
             @click="next"
-            class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow text-gray-700 z-10"
+            class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/55 backdrop-blur-md hover:bg-gold-500 hover:text-[#241300] border border-gold-500/30 rounded-full w-10 h-10 flex items-center justify-center shadow-card-dark text-gold-300 z-10 transition-all duration-300"
             aria-label="Next image"
         >
             ›
