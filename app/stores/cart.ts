@@ -58,8 +58,9 @@ export const useCartStore = defineStore("cart", () => {
         }
     }
 
-    // load on first use (safe to call multiple times)
-    loadCart();
+    // NOTE: cart is hydrated from localStorage on the client by
+    // plugins/cart.client.ts — never at setup time, or SSR's empty
+    // payload would silently wipe the persisted cart.
 
     return {
         cartItems,

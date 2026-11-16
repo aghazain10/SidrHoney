@@ -151,7 +151,7 @@
                             Your <span class="text-gold-400">Order</span>
                         </h2>
                         <ul class="mt-4 space-y-3 max-h-64 overflow-y-auto pr-1">
-                            <li v-for="item in cart.cartItems.value" :key="item.id" class="flex items-center justify-between gap-3 text-sm">
+                            <li v-for="item in cart.cartItems" :key="item.id" class="flex items-center justify-between gap-3 text-sm">
                                 <span class="text-cream/90 font-semibold leading-snug">{{ item.name }} <span class="text-muted">× {{ item.quantity }}</span></span>
                                 <span class="text-gold-300 font-bold whitespace-nowrap">Rs {{ (item.price * item.quantity).toLocaleString() }}</span>
                             </li>
@@ -200,9 +200,9 @@ select.field-input option {
 
 <script setup>
 import { ref, computed } from "vue";
-import { useCart } from "~/composables/useCart";
+import { useCartStore } from "~/stores/cart";
 
-const cart = useCart();
+const cart = useCartStore();
 
 const form = ref({
     name: "",
@@ -218,11 +218,11 @@ const errorMessage = ref("");
 const loading = ref(false);
 const config = useRuntimeConfig();
 
-const isCartEmpty = computed(() => cart.cartItems.value.length === 0);
+const isCartEmpty = computed(() => cart.cartItems.length === 0);
 
 // Matches the backend's flat delivery fee (see OrderController)
 const subtotal = computed(() =>
-    cart.cartItems.value.reduce((sum, i) => sum + i.price * i.quantity, 0),
+    cart.cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0),
 );
 const deliveryCharges = computed(() => 250);
 
@@ -238,7 +238,7 @@ async function submitOrder() {
     try {
         const payload = {
             ...form.value,
-            items: cart.cartItems.value.map((item) => ({
+            items: cart.cartItems.map((item) => ({
                 product_id: item.id || null,
                 name: item.name,
                 quantity: item.quantity,
