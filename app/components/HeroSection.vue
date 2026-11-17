@@ -31,9 +31,6 @@
             />
         </svg>
 
-        <!-- Bees drifting across the hero -->
-        <FlyingBees :count="3" :size="38" class="z-[5]" />
-
         <!-- Falling honey drops -->
         <div class="absolute top-[110px] left-0 w-full h-72 pointer-events-none hidden md:block" aria-hidden="true">
             <svg class="absolute left-[57%] w-6 h-64 overflow-visible" viewBox="0 0 24 260">
@@ -134,10 +131,23 @@
                         <div class="w-[115%] aspect-square rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.3) 0%, rgba(212,160,23,0.07) 45%, transparent 70%); filter: blur(6px);"></div>
                     </div>
 
-                    <!-- Animated honey-pour scene -->
+                    <!-- Cinematic honey-pour video -->
                     <div class="hero-rise relative" style="--rise-delay: 250ms">
-                    <div class="relative floaty h-[420px] sm:h-[500px] lg:h-[560px]">
-                        <HoneyScene />
+                    <div class="relative floaty">
+                        <div class="relative overflow-hidden rounded-t-[999px] rounded-b-[2rem] gold-ring">
+                            <video
+                                class="block w-full aspect-[4/5.2] object-cover"
+                                src="/videos/hero-honey.mp4"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                preload="auto"
+                                disablepictureinpicture
+                                aria-label="Video: golden Sidr honey dripping from a wooden honey dipper into a glass jar beside fresh honeycomb"
+                            ></video>
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-ink/25"></div>
+                        </div>
                     </div>
 
                     <!-- Rotating seal -->
@@ -195,9 +205,6 @@
 </template>
 
 <script setup>
-import HoneyScene from "~/components/HoneyScene.vue";
-import FlyingBees from "~/components/FlyingBees.vue";
-
 const avatars = ["AK", "SA", "AR", "ZM"];
 const avatarHues = [
     "linear-gradient(140deg,#F6D87A,#D4A017)",
