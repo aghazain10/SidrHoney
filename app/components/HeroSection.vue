@@ -136,13 +136,15 @@
                     <div class="relative floaty">
                         <div class="relative overflow-hidden rounded-t-[999px] rounded-b-[2rem] gold-ring">
                             <video
+                                ref="heroVideo"
                                 class="block w-full aspect-[4/5.2] object-cover"
-                                src="/videos/hero-honey.mp4"
+                                poster="/videos/hero-poster.webp"
+                                data-src="/videos/hero-honey.mp4"
                                 autoplay
                                 muted
                                 loop
                                 playsinline
-                                preload="auto"
+                                preload="none"
                                 disablepictureinpicture
                                 aria-label="Video: golden Sidr honey dripping from a wooden honey dipper into a glass jar beside fresh honeycomb"
                             ></video>
@@ -205,6 +207,8 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+
 const avatars = ["AK", "SA", "AR", "ZM"];
 const avatarHues = [
     "linear-gradient(140deg,#F6D87A,#D4A017)",
@@ -212,6 +216,35 @@ const avatarHues = [
     "linear-gradient(140deg,#E9BE5A,#8A5A00)",
     "linear-gradient(140deg,#FBF3D9,#D4A017)",
 ];
+
+const heroVideo = ref(null);
+
+// Defer the hero video (3.9MB) until the page's critical resources have
+// loaded, so it never competes with the LCP render on slow connections.
+// The poster frame shows instantly in the meantime.
+onMounted(() => {
+    const v = heroVideo.value;
+    if (!v) return;
+    const startVideo = () => {
+        v.src = v.dataset.src;
+        v.play().catch(() => {});
+    };
+    if (document.readyState === "complete") {
+        if ("requestIdleCallback" in window) {
+            requestIdleCallback(startVideo, { timeout: 2500 });
+        } else {
+            setTimeout(startVideo, 1200);
+        }
+    } else {
+        window.addEventListener("load", () => {
+            if ("requestIdleCallback" in window) {
+                requestIdleCallback(startVideo, { timeout: 2500 });
+            } else {
+                setTimeout(startVideo, 1200);
+            }
+        }, { once: true });
+    }
+});
 </script>
 
 <style scoped>

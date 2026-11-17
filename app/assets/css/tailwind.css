@@ -6,6 +6,30 @@
     font-display: swap;
 }
 
+/* Self-hosted variable fonts (replaces Google Fonts CDN — removes a
+   render-blocking third-party chain that delayed first paint ~1.5s) */
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/g/Manrope-var.woff2") format("woff2");
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/fonts/g/PlayfairDisplay-var.woff2") format("woff2");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/fonts/g/PlayfairDisplay-var-italic.woff2") format("woff2");
+    font-weight: 400 900;
+    font-style: italic;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

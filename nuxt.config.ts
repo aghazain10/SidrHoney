@@ -73,11 +73,26 @@ export default defineNuxtConfig({
             link: [
                 { rel: "icon", type: "image/png", href: "/favicon.png" },
                 { rel: "canonical", href: "https://sdrhoney.com" },
-                { rel: "preconnect", href: "https://fonts.googleapis.com" },
-                { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
                 {
-                    rel: "stylesheet",
-                    href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap",
+                    rel: "preload",
+                    href: "/fonts/g/Manrope-var.woff2",
+                    as: "font",
+                    type: "font/woff2",
+                    crossorigin: "",
+                },
+                {
+                    rel: "preload",
+                    href: "/fonts/g/PlayfairDisplay-var.woff2",
+                    as: "font",
+                    type: "font/woff2",
+                    crossorigin: "",
+                },
+                {
+                    rel: "preload",
+                    href: "/fonts/g/PlayfairDisplay-var-italic.woff2",
+                    as: "font",
+                    type: "font/woff2",
+                    crossorigin: "",
                 },
                 {
                     rel: "preload",
@@ -99,6 +114,15 @@ export default defineNuxtConfig({
             headers: { "Cache-Control": "public, max-age=31536000, immutable" },
         },
         "/fonts/**": {
+            headers: { "Cache-Control": "public, max-age=31536000, immutable" },
+        },
+        "/videos/**": {
+            headers: { "Cache-Control": "public, max-age=31536000, immutable" },
+        },
+        "/_ipx/**": {
+            headers: { "Cache-Control": "public, max-age=31536000, immutable" },
+        },
+        "/sdhoney.png": {
             headers: { "Cache-Control": "public, max-age=31536000, immutable" },
         },
         "/**": {

@@ -22,8 +22,8 @@
                             :height="imgHeight"
                             :sizes="sizes"
                             format="webp"
-                            :loading="index === 0 ? 'eager' : 'lazy'"
-                            :fetchpriority="index === 0 ? 'high' : undefined"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </slot>
                 </div>
