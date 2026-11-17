@@ -1,5 +1,6 @@
 <template>
     <section id="reviews" class="relative bg-ink py-16 md:py-24 overflow-hidden">
+        <FlyingBees :count="2" :size="34" class="z-[5] opacity-90" />
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center reveal">
                 <span class="kicker">Loved Nationwide</span>
@@ -45,6 +46,7 @@
 </template>
 
 <script setup>
+import FlyingBees from "~/components/FlyingBees.vue";
 const stats = [
     { value: "4.9/5", label: "Average Rating" },
     { value: "2,300+", label: "Jars Delivered" },

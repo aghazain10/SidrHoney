@@ -39,6 +39,23 @@ body {
     color: #0b0908;
 }
 
+/* ---------- Honey bee cursor (desktop only) ---------- */
+@media (pointer: fine) {
+    body,
+    .flying-bees {
+        cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='32'%20viewBox='0%200%2040%2032'%3E%3Cellipse%20cx='21'%20cy='8.5'%20rx='8.5'%20ry='4.8'%20fill='%23ffffff'%20fill-opacity='0.82'%20stroke='%23d4a017'%20stroke-opacity='0.7'%20transform='rotate(-16%2021%208.5)'/%3E%3Cellipse%20cx='30'%20cy='9.5'%20rx='6.5'%20ry='3.8'%20fill='%23ffffff'%20fill-opacity='0.6'%20transform='rotate(10%2030%209.5)'/%3E%3Cpath%20d='M35.5%2019.5%20L40%2018.3%20L40%2021.7%20Z'%20fill='%23241300'/%3E%3Cellipse%20cx='23'%20cy='19'%20rx='13'%20ry='8.2'%20fill='%23E9BE5A'%20stroke='%23241300'%20stroke-width='1.4'/%3E%3Cpath%20d='M27.5%2011.9%20C26.3%2017%2026.3%2021%2027.5%2026.1'%20stroke='%23241300'%20stroke-width='3.1'%20fill='none'%20stroke-linecap='round'/%3E%3Cpath%20d='M18%2011.6%20C16.9%2017%2016.9%2021%2018%2026.4'%20stroke='%23241300'%20stroke-width='3.1'%20fill='none'%20stroke-linecap='round'/%3E%3Ccircle%20cx='8.5'%20cy='18.6'%20r='5'%20fill='%231a1611'/%3E%3Ccircle%20cx='6.9'%20cy='17'%20r='1.25'%20fill='%23F6D87A'/%3E%3Cpath%20d='M7.5%2013.8%20C7%2011%205%209.5%202.6%209'%20stroke='%231a1611'%20stroke-width='1.3'%20fill='none'%20stroke-linecap='round'/%3E%3C/svg%3E") 6 18, auto;
+    }
+    a,
+    button,
+    select,
+    summary,
+    label,
+    [role="button"],
+    input[type="submit"] {
+        cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='35'%20viewBox='0%200%2044%2035'%3E%3Cellipse%20cx='22'%20cy='9'%20rx='10.5'%20ry='5.8'%20fill='%23ffffff'%20fill-opacity='0.85'%20stroke='%23d4a017'%20stroke-width='1.2'%20stroke-opacity='0.8'%20transform='rotate(-14%2022%209)'/%3E%3Cellipse%20cx='32'%20cy='10'%20rx='7.5'%20ry='4.5'%20fill='%23ffffff'%20fill-opacity='0.65'%20transform='rotate(12%2032%2010)'/%3E%3Cpath%20d='M39%2020.8%20L44%2019.4%20L44%2024.2%20Z'%20fill='%23241300'/%3E%3Cellipse%20cx='25'%20cy='20'%20rx='15'%20ry='9.5'%20fill='%23F6D87A'%20stroke='%23241300'%20stroke-width='1.6'/%3E%3Cpath%20d='M29.8%2012.1%20C28.3%2018.5%2028.3%2022.5%2029.8%2028.9'%20stroke='%23241300'%20stroke-width='3.6'%20fill='none'%20stroke-linecap='round'/%3E%3Cpath%20d='M18.5%2011.8%20C17.1%2018.5%2017.1%2022.5%2018.5%2029.2'%20stroke='%23241300'%20stroke-width='3.6'%20fill='none'%20stroke-linecap='round'/%3E%3Ccircle%20cx='8'%20cy='19.6'%20r='5.8'%20fill='%231a1611'/%3E%3Ccircle%20cx='6.2'%20cy='17.8'%20r='1.5'%20fill='%23F6D87A'/%3E%3Cpath%20d='M7%2014.4%20C6.4%2011.2%204.3%209.6%201.6%209'%20stroke='%231a1611'%20stroke-width='1.4'%20fill='none'%20stroke-linecap='round'/%3E%3C/svg%3E") 7 20, pointer;
+    }
+}
+
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar {
     width: 10px;

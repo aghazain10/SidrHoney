@@ -31,6 +31,9 @@
             />
         </svg>
 
+        <!-- Bees drifting across the hero -->
+        <FlyingBees :count="3" :size="38" class="z-[5]" />
+
         <!-- Falling honey drops -->
         <div class="absolute top-[110px] left-0 w-full h-72 pointer-events-none hidden md:block" aria-hidden="true">
             <svg class="absolute left-[57%] w-6 h-64 overflow-visible" viewBox="0 0 24 260">
@@ -131,45 +134,37 @@
                         <div class="w-[115%] aspect-square rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.3) 0%, rgba(212,160,23,0.07) 45%, transparent 70%); filter: blur(6px);"></div>
                     </div>
 
-                    <!-- Arch-framed product photo -->
+                    <!-- Animated honey-pour scene -->
                     <div class="hero-rise relative" style="--rise-delay: 250ms">
-                    <div class="relative floaty">
-                        <div class="relative overflow-hidden rounded-t-[999px] rounded-b-[2rem] gold-ring">
-                            <img
-                                src="/honey-product-1.jpeg"
-                                alt="SDR Honey — premium raw Sidr honey jar with its box, harvested from the wild forests of Karak"
-                                class="w-full aspect-[4/5.4] object-cover object-[50%_38%]"
-                                width="1056"
-                                height="1300"
-                                fetchpriority="high"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/10"></div>
-                            <!-- Inner label chip -->
-                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/55 backdrop-blur-md border border-gold-500/30 px-4 py-1.5 whitespace-nowrap">
-                                <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-gold-200">Premium Sidr · 450g</span>
-                            </div>
-                        </div>
+                    <div class="relative floaty h-[420px] sm:h-[500px] lg:h-[560px]">
+                        <HoneyScene />
+                    </div>
 
-                        <!-- Rotating seal -->
-                        <div class="absolute -top-6 -right-3 sm:-right-8 w-24 sm:w-32 lg:w-36">
-                            <div class="relative">
-                                <svg viewBox="0 0 120 120" class="spin-slow w-full drop-shadow-[0_0_18px_rgba(212,160,23,0.45)]" aria-hidden="true">
-                                    <defs>
-                                        <path id="sealCircle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
-                                    </defs>
-                                    <circle cx="60" cy="60" r="59" fill="#14100b" stroke="#D4A017" stroke-width="1.6" stroke-opacity="0.9"/>
-                                    <circle cx="60" cy="60" r="30" fill="none" stroke="#D4A017" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 4"/>
-                                    <text font-size="10.2" letter-spacing="2.35" fill="#E9BE5A" font-family="Manrope, sans-serif" font-weight="800">
-                                        <textPath href="#sealCircle">100% RAW &amp; PURE • SINGLE ORIGIN • KARAK PAKISTAN •&#160;</textPath>
-                                    </text>
-                                </svg>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-gold-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 8 6 11.6 6 14.5A6 6 0 0 0 18 14.5C18 11.6 16 8 12 2z"/></svg>
-                                </div>
+                    <!-- Rotating seal -->
+                    <div class="absolute top-[2%] right-[-2%] sm:right-[2%] lg:right-[-4%] w-24 sm:w-32 lg:w-36">
+                        <div class="relative">
+                            <svg viewBox="0 0 120 120" class="spin-slow w-full drop-shadow-[0_0_18px_rgba(212,160,23,0.45)]" aria-hidden="true">
+                                <defs>
+                                    <path id="sealCircle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
+                                </defs>
+                                <circle cx="60" cy="60" r="59" fill="#14100b" stroke="#D4A017" stroke-width="1.6" stroke-opacity="0.9"/>
+                                <circle cx="60" cy="60" r="30" fill="none" stroke="#D4A017" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 4"/>
+                                <text font-size="10.2" letter-spacing="2.35" fill="#E9BE5A" font-family="Manrope, sans-serif" font-weight="800">
+                                    <textPath href="#sealCircle">100% RAW &amp; PURE • SINGLE ORIGIN • KARAK PAKISTAN •&#160;</textPath>
+                                </text>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-gold-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 8 6 11.6 6 14.5A6 6 0 0 0 18 14.5C18 11.6 16 8 12 2z"/></svg>
                             </div>
                         </div>
                     </div>
+
+                    </div>
+
+                    <!-- Inner label chip -->
+                    <div class="hero-rise absolute bottom-[-2%] left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/60 backdrop-blur-md border border-gold-500/30 px-4 py-1.5 whitespace-nowrap z-10" style="--rise-delay: 560ms">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-gold-200">Premium Sidr · 450g</span>
                     </div>
 
                     <!-- Floating chips -->
@@ -200,6 +195,9 @@
 </template>
 
 <script setup>
+import HoneyScene from "~/components/HoneyScene.vue";
+import FlyingBees from "~/components/FlyingBees.vue";
+
 const avatars = ["AK", "SA", "AR", "ZM"];
 const avatarHues = [
     "linear-gradient(140deg,#F6D87A,#D4A017)",

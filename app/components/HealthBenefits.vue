@@ -1,5 +1,6 @@
 <template>
     <section id="benefits" class="relative bg-ink py-16 md:py-24 honeycomb-bg overflow-hidden">
+        <FlyingBees :count="2" :size="32" class="z-[5] opacity-90" />
         <div class="pointer-events-none absolute -left-40 top-24 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.09), transparent 65%);"></div>
         <div class="pointer-events-none absolute -right-40 bottom-24 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.09), transparent 65%);"></div>
 
@@ -38,6 +39,7 @@
 </template>
 
 <script setup>
+import FlyingBees from "~/components/FlyingBees.vue";
 const benefits = [
     {
         title: "A Natural Choice for Everyday Life",

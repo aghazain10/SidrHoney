@@ -1,5 +1,6 @@
 <template>
     <section id="story" class="relative bg-onyx py-16 md:py-24 border-t border-line overflow-hidden honeycomb-bg">
+        <FlyingBees :count="2" :size="30" class="z-[5] opacity-90" />
         <!-- Giant decorative quote -->
         <svg class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-6 w-40 h-40 text-gold-500/[0.07]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 5C7 7 5.5 9.3 5.5 12.6 5.5 15.5 7.4 18 10.3 18c2.5 0 4.2-1.7 4.2-4 0-2.1-1.5-3.7-3.7-3.7-.4 0-.9.1-1.2.3.4-1.7 1.9-3.6 3.7-4.6L9.5 5zm9 0C16 7 14.5 9.3 14.5 12.6c0 2.9 1.9 5.4 4.8 5.4 2.5 0 4.2-1.7 4.2-4 0-2.1-1.5-3.7-3.7-3.7-.4 0-.9.1-1.2.3.4-1.7 1.9-3.6 3.7-4.6L18.5 5z"/></svg>
 
@@ -28,3 +29,7 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import FlyingBees from "~/components/FlyingBees.vue";
+</script>

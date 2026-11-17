@@ -1,5 +1,6 @@
 <template>
     <section id="whyus" class="relative bg-onyx py-16 md:py-24 border-y border-line overflow-hidden">
+        <FlyingBees :count="2" :size="36" class="z-[5] opacity-90" />
         <div class="pointer-events-none absolute right-[-12rem] top-[-8rem] w-[36rem] h-[36rem] rounded-full" style="background: radial-gradient(circle, rgba(212,160,23,0.1), transparent 60%);"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -39,6 +40,7 @@
 </template>
 
 <script setup>
+import FlyingBees from "~/components/FlyingBees.vue";
 const reasons = [
     {
         title: "100% Pure & Unprocessed",
