@@ -14,7 +14,7 @@
                 <h2 class="mt-4 font-display font-bold text-cream text-3xl sm:text-5xl tracking-tight">
                     One Jar. <span class="text-gold-gradient italic">Nothing Else.</span>
                 </h2>
-                <p class="mt-3 text-muted max-w-xl mx-auto">Single-origin Karak Sidr honey, hygienically sealed in premium glass. Choose your size — every jar ships within 24 hours.</p>
+                <p class="mt-3 text-muted max-w-xl mx-auto">Pure raw Sidr honey from Karak — a natural, single-origin Pakistani honey hygienically sealed in premium glass. Choose your size and see the honey price in Pakistan per gram below — every jar ships within 24 hours.</p>
             </div>
 
             <div class="card-dark grid lg:grid-cols-2 overflow-hidden">
@@ -60,7 +60,7 @@
                     </div>
 
                     <p class="mt-5 text-sm text-muted leading-relaxed">
-                        Known as Beri Honey (بیری کا شہد) or Sidr Tree Honey — a deep, naturally sweet character with a delicate aroma. Kept close to its natural state: never heated, blended, thickened, or altered. Sealed fresh from the Karak forests to your table.
+                        Known as Beri Honey (بیری کا شہد) or Sidr Tree Honey — a deep, naturally sweet raw honey with a delicate aroma. This pure honey is kept close to its natural state: never heated, blended, thickened, or altered. Single-origin Pakistani honey, sealed fresh from the Karak forests to your table.
                     </p>
 
                     <!-- Quantity options -->
@@ -94,7 +94,7 @@
                             <template v-else>Custom</template>
                         </p>
                         <p class="text-xs text-muted pb-1.5 leading-tight">
-                            <template v-if="selectedOption.price">Incl. all taxes<br />Rs 250 delivery</template>
+                            <template v-if="selectedOption.price">Incl. all taxes<br />Rs 250 delivery<br />≈ Rs. {{ (selectedOption.price / selectedOption.weight).toFixed(2) }} per gram</template>
                             <template v-else>Tailored bulk pricing<br />on request</template>
                         </p>
                     </div>

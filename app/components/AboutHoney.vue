@@ -34,7 +34,14 @@
                     From Karak's Wild Forests,<br /><span class="text-gold-gradient italic">To Your Table.</span>
                 </h2>
                 <p class="mt-5 text-muted leading-relaxed">
-                    SDR Honey is sourced exclusively from the wild Sidr (Ziziphus spina-christi) forests of Karak, Pakistan — harvested during the brief Sidr flowering season, when our European honey bees gather nectar from blossoms that bloom nowhere else on earth quite like this.
+                    SDR Honey is sourced exclusively from the wild Sidr (Ziziphus spina-christi) forests of Karak, Pakistan — harvested during the brief Sidr flowering season, when our European honey bees gather nectar from blossoms that bloom nowhere else on earth quite like this. If you have ever wondered what is Sidr honey, it is a single-origin Pakistani honey — pure, raw and unprocessed — with a deep, naturally sweet flavour and delicate floral aroma that sets it apart from ordinary honey.
+                </p>
+                <p class="mt-4 text-sm text-muted leading-relaxed">
+                    Looking for a pure honey you can trust? Read our guides on
+                    <a href="/blog" class="text-gold-300 hover:text-gold-200 underline underline-offset-2">how to check if honey is pure at home</a>
+                    and
+                    <a href="/blog" class="text-gold-300 hover:text-gold-200 underline underline-offset-2">the types of honey found in Pakistan</a>.
+                    This raw honey, natural honey and wild forest honey is never heated or blended — only gently strained and sealed in glass.
                 </p>
 
                 <div class="mt-8 grid sm:grid-cols-2 gap-5">

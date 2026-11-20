@@ -75,7 +75,7 @@
                     class="hero-rise mt-6 font-display font-extrabold text-cream leading-[1.02] text-[2.6rem] sm:text-6xl xl:text-[4.35rem] tracking-tight"
                     style="--rise-delay: 180ms"
                 >
-                    Liquid Gold,<br />
+                    Pure Sidr Honey,<br />
                     <span class="text-gold-gradient italic">Straight from<br class="hidden sm:block" /> the Wild.</span>
                 </h1>
 
@@ -83,9 +83,12 @@
                     class="hero-rise mt-6 text-muted text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0"
                     style="--rise-delay: 280ms"
                 >
-                    100% raw, single-origin Sidr honey from the untouched forests of
-                    Karak — <span class="text-cream/90 font-semibold">never heated, never blended,</span>
-                    never adulterated. Just nature, sealed in glass.
+                    Buy 100% pure raw Sidr honey — also called Beri honey (بیری کا شہد) —
+                    from the wild Sidr forests of Karak, Pakistan. This single-origin
+                    Pakistani honey is <span class="text-cream/90 font-semibold">never heated, never blended,</span>
+                    never adulterated: a natural honey with a deep, delicate flavour.
+                    Compare the honey price in Pakistan by jar size below and order
+                    across Pakistan via WhatsApp.
                 </p>
 
                 <!-- CTAs -->

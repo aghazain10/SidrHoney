@@ -77,14 +77,8 @@ useHead({
                                 description: "10kg pack",
                             },
                         ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "200",
-                            bestRating: "5",
-                            worstRating: "1",
-                        },
                     },
+
                     {
                         "@type": "Organization",
                         "@id": "https://sdrhoney.com/#organization",
@@ -158,6 +152,30 @@ useHead({
                                 acceptedAnswer: {
                                     "@type": "Answer",
                                     text: "You can order through our website, WhatsApp at +92 331 1116915, or a direct call.",
+                                },
+                            },
+                            {
+                                "@type": "Question",
+                                name: "How can I check if honey is pure at home?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "Look for a single ingredient (honey), a clear origin and harvest date, lab-testing or certification, and a natural aroma and texture. Pure honey often thickens in cold temperatures and may crystallise over time. Sidr honey from Karak is raw, single-origin and lab-tested for purity.",
+                                },
+                            },
+                            {
+                                "@type": "Question",
+                                name: "How to identify pure honey?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "Pure honey has a consistent colour, a natural floral aroma and a thick, slow-flowing texture. Check the label for origin, harvest and certification, and buy from a trusted single-origin producer. SDR Honey is raw Sidr (Beri) honey from the wild forests of Karak, Pakistan — never heated, never blended, and independently lab tested.",
+                                },
+                            },
+                            {
+                                "@type": "Question",
+                                name: "Does pure honey crystallise?",
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: "Yes. Crystallisation is a natural characteristic of pure honey and can occur depending on its natural sugar composition, temperature and storage conditions. It does not mean the honey has gone bad. Sidr honey usually does not crystallise.",
                                 },
                             },
                         ],

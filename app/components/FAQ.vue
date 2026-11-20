@@ -92,6 +92,14 @@ const faqs = [
         answer: "Yes. Crystallisation is a natural characteristic of pure honey and can occur depending on its natural sugar composition, temperature, and storage conditions. It does not mean the honey has gone bad. Sidr Honey usually does not crystallise.",
     },
     {
+        question: "How can I check if honey is pure at home?",
+        answer: "Look for a single ingredient (honey), a clear origin and harvest date, lab-testing or certification, and a natural aroma and texture. Pure honey often thickens in cold temperatures and may crystallise over time, while adulterated honey stays runny. Sidr honey from Karak is raw, single-origin and lab-tested for purity.",
+    },
+    {
+        question: "How to identify pure honey?",
+        answer: "Pure honey has a consistent colour, a natural floral aroma and a thick, slow-flowing texture. Check the label for origin, harvest and certification, and buy from a trusted single-origin producer. SDR Honey is raw Sidr (Beri) honey from the wild forests of Karak, Pakistan — never heated, never blended, and independently lab tested.",
+    },
+    {
         question: "Who should not consume honey?",
         answer: "Honey should not be given to infants under 12 months of age. Anyone with a known honey or bee related allergy should also avoid it. People managing blood sugar should consider honey as a source of sugar and consume it according to their dietary needs.",
     },

@@ -63,7 +63,7 @@ const benefits = [
     },
     {
         title: "A Warm & Comforting Tradition",
-        text: "A spoonful of Sidr honey in a warm drink is a simple ritual enjoyed in homes for generations.",
+        text: "A spoonful of Sidr honey in a warm drink is a simple ritual enjoyed in homes for generations — and a trusted home remedy for cough, cold and sore throat.",
         icon: '<path d="M4 10h13v5a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5v-5z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2"/><path d="M8 6c0-1 .8-1 .8-2M12 6c0-1 .8-1 .8-2"/>',
     },
     {
